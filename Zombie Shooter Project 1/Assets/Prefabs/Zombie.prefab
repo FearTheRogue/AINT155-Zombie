@@ -22,11 +22,11 @@ GameObject:
   - component: {fileID: 212441598394973388}
   - component: {fileID: 58122096098601738}
   - component: {fileID: 114339903921033714}
+  - component: {fileID: 114475190715524022}
   - component: {fileID: 114244766374646218}
   - component: {fileID: 114318493562638572}
   - component: {fileID: 114458188896272200}
   - component: {fileID: 114411977528718000}
-  - component: {fileID: 114475190715524022}
   m_Layer: 9
   m_Name: Zombie
   m_TagString: Untagged
@@ -106,6 +106,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 114411977528718000}
         m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114458188896272200}
+        m_MethodName: Die
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
