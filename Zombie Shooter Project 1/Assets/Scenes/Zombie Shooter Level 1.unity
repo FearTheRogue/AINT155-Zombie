@@ -572,6 +572,7 @@ GameObject:
   - component: {fileID: 2065351076}
   - component: {fileID: 2065351077}
   - component: {fileID: 2065351078}
+  - component: {fileID: 2065351079}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Untagged
@@ -748,3 +749,14 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2065351079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2065351069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd2aad523a82be64b8fe27bd2b9b6d57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
