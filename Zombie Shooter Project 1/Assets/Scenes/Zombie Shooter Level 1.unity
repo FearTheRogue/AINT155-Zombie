@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 1
-  repeat: 1
+  repeat: 0
   onTimerComplete:
     m_PersistentCalls:
       m_Calls:
