@@ -154,7 +154,7 @@ GameObject:
   m_Layer: 0
   m_Name: Zombie Spawner
   m_TagString: Untagged
-  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -169,7 +169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1e202c905169ff448cffd54c3090611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToSpawn: {fileID: 457550445}
+  prefabToSpawn: {fileID: 1967417105220984, guid: 396cdc8ae77f3b640b3c312914f376ba,
+    type: 2}
   adjustmentAngle: 0
 --- !u!114 &298246204
 MonoBehaviour:
@@ -213,11 +214,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &457550445 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1967417105220984, guid: 396cdc8ae77f3b640b3c312914f376ba,
-    type: 2}
-  m_PrefabInternal: {fileID: 1633429867}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
