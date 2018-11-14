@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameUI1 : MonoBehaviour {
+public class HurtTrigger : MonoBehaviour {
 
     public int damage;
     public float resetTime = 0.25f;
@@ -18,4 +18,4 @@ public class GameUI1 : MonoBehaviour {
     {
         GetComponent<Collider2D>().enabled = true;
     }
-}
+} // HurtTrigger

@@ -5,7 +5,7 @@ using UnityEngine;
 public class TopDownCharacterController2D : MonoBehaviour {
 
     public float speed = 5.0f;
-    Rigidbody2D rigidbody2D;
+    new Rigidbody2D rigidbody2D;
 
 	// Use this for initialization
 	void Start () {

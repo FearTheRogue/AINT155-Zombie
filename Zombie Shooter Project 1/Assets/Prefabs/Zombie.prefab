@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4224997889826680}
+  - component: {fileID: 114012786524051970}
   m_Layer: 14
   m_Name: Hurt Trigger
   m_TagString: Untagged
@@ -35,9 +36,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4571734000894544}
   - component: {fileID: 212441598394973388}
-  - component: {fileID: 114624984650177062}
   - component: {fileID: 58122096098601738}
   - component: {fileID: 114339903921033714}
+  - component: {fileID: 114509703247197868}
   - component: {fileID: 114475190715524022}
   - component: {fileID: 114244766374646218}
   - component: {fileID: 114318493562638572}
@@ -92,6 +93,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.55}
   serializedVersion: 2
   m_Radius: 0.55
+--- !u!114 &114012786524051970
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1318052657297184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 854796acd7ce90f4a9240491e0ea7b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  resetTime: 0.25
 --- !u!114 &114244766374646218
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -134,8 +148,8 @@ MonoBehaviour:
   onDie:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114411977528718000}
-        m_MethodName: Spawn
+      - m_Target: {fileID: 114458188896272200}
+        m_MethodName: Die
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -145,8 +159,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 114458188896272200}
-        m_MethodName: Die
+      - m_Target: {fileID: 114411977528718000}
+        m_MethodName: Spawn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -174,7 +188,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1e202c905169ff448cffd54c3090611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToSpawn: {fileID: 0}
+  prefabToSpawn: {fileID: 1936050420749384, guid: 2fedeeaade2b95a4d932ae3bd341b4fe,
+    type: 2}
   adjustmentAngle: 0
 --- !u!114 &114458188896272200
 MonoBehaviour:
@@ -225,7 +240,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: EnemySpawnedEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!114 &114624984650177062
+--- !u!114 &114509703247197868
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

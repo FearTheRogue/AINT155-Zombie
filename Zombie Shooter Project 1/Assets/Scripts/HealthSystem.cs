@@ -24,4 +24,4 @@ public class HealthSystem : MonoBehaviour {
             onDie.Invoke();
         }
     }
-}
+} // HealthSystem

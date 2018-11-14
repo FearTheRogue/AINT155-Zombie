@@ -37,12 +37,5 @@ public class Weapon : MonoBehaviour {
                 Fire();
             }
         }
-        if (Input.GetMouseButton(1))
-        {
-            if (!isFiring)
-            {
-                Fire();
-            }
-        }
 	}
 } // Weapon
