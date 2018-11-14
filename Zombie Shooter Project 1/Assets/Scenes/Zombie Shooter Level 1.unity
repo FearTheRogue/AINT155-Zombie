@@ -121,7 +121,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 130098885}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Bullet Spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &298246203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,6 +214,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &360969047 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1318052657297184, guid: 396cdc8ae77f3b640b3c312914f376ba,
+    type: 2}
+  m_PrefabInternal: {fileID: 1633429867}
+--- !u!114 &360969049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 360969047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 854796acd7ce90f4a9240491e0ea7b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  resetTime: 0.25
 --- !u!1 &393752051
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,7 +366,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1378108065}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Bullet Spawn (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -874,9 +892,10 @@ GameObject:
   - component: {fileID: 2065351070}
   - component: {fileID: 2065351076}
   - component: {fileID: 2065351077}
-  - component: {fileID: 2065351078}
+  - component: {fileID: 2065351080}
   - component: {fileID: 2065351079}
-  m_Layer: 0
+  - component: {fileID: 2065351078}
+  m_Layer: 13
   m_Name: Hero
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1063,6 +1082,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd2aad523a82be64b8fe27bd2b9b6d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2065351080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2065351069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d88a2f3e13b719c43a1545f2a0db99fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  onDie:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnDamaged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2065351079}
+        m_MethodName: SendHealthData
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: OnDamagedEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &2084882294
 GameObject:
   m_ObjectHideFlags: 0
