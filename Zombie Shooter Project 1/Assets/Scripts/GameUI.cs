@@ -6,20 +6,28 @@ using UnityEngine.UI;
 public class GameUI : MonoBehaviour {
 
     public Slider healthBar;
-    public Text scoreText;
+    public Text scoreText, healthText;
+    public Button pause;
 
     public int playerScore = 0;
+
 
     private void OnEnable()
     {
         Player.OnUpdateHealth += UpdateHealthBar;
         AddScore.OnSendScore += UpdateScore;
+
     }
 
     private void OnDisable()
     {
         Player.OnUpdateHealth -= UpdateHealthBar;
         AddScore.OnSendScore -= UpdateScore;
+    }
+
+    public void PauseTheGame()
+    {
+        Time.timeScale = 0f;
     }
 
     private void UpdateHealthBar(int health)
