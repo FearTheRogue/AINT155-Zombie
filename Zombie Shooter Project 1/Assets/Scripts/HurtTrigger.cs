@@ -9,7 +9,8 @@ public class HurtTrigger : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.transform.SendMessage("Take Damage", damage, SendMessageOptions.DontRequireReceiver);
+        print(collision.transform);
+        collision.transform.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
         GetComponent<Collider2D>().enabled = false;
         Invoke("ResetTrigger", resetTime);
     }
