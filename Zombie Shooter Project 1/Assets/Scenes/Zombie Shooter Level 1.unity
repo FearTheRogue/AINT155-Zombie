@@ -704,11 +704,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4575195547590854, guid: f978de02fb15c6d4394c652d5f9d4bb9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 21.646248
+      value: 9.81
       objectReference: {fileID: 0}
     - target: {fileID: 4575195547590854, guid: f978de02fb15c6d4394c652d5f9d4bb9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -6.3355765
+      value: -5.48
       objectReference: {fileID: 0}
     - target: {fileID: 4575195547590854, guid: f978de02fb15c6d4394c652d5f9d4bb9, type: 2}
       propertyPath: m_LocalPosition.z
@@ -739,6 +739,10 @@ Prefab:
       propertyPath: CollisionModule.plane0
       value: 
       objectReference: {fileID: 1584186355}
+    - target: {fileID: 1379780613002760, guid: f978de02fb15c6d4394c652d5f9d4bb9, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f978de02fb15c6d4394c652d5f9d4bb9, type: 2}
   m_IsPrefabParent: 0
