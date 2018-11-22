@@ -20,6 +20,11 @@ public class GameManager : MonoBehaviour {
         SceneManager.LoadScene("Main Menu");
     }
 
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("Zombie Shooter Level 1");
+    }
+
     public void ExitGame()
     {
         Application.Quit();
