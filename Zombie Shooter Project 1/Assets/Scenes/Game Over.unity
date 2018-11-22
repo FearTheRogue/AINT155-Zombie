@@ -14681,7 +14681,7 @@ GameObject:
   - component: {fileID: 1154592947}
   - component: {fileID: 1154592949}
   m_Layer: 5
-  m_Name: MenuTitle
+  m_Name: You Failed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14747,7 +14747,7 @@ Animator:
   m_GameObject: {fileID: 1154592945}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 05f622bd81d1c0342a7cdb11e10448fb, type: 2}
+  m_Controller: {fileID: 9100000, guid: 96db2ee94f27a79469f3f886ca0559b8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
