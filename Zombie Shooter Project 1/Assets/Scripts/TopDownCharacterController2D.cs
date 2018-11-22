@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TopDownCharacterController2D : MonoBehaviour {
 
-    private Animator walkAnim;
+    //private Animator walkAnim;
 
     public float speed = 5.0f;
     new Rigidbody2D rigidbody2D;
@@ -12,8 +12,8 @@ public class TopDownCharacterController2D : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rigidbody2D = GetComponent<Rigidbody2D>();
-        walkAnim = GetComponent<Animator>();
-        walkAnim.SetBool("isWalking", false);
+      //  walkAnim = GetComponent<Animator>();
+      //  walkAnim.SetBool("isWalking", false);
 	}
 	
 	// Update is called once per frame
@@ -22,16 +22,16 @@ public class TopDownCharacterController2D : MonoBehaviour {
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
 
-        Update();
+       // Update();
 
         rigidbody2D.velocity = new Vector2(x, y) * speed;
         rigidbody2D.angularVelocity = 0.0f;
 
 	}
 
-    private void Update()
-    {
-        walkAnim.SetBool("isWalking", true);
-    }
+    //private void Update()
+    //{
+    //    walkAnim.SetBool("isWalking", true);
+   // }
 
 } // TopDownCharacterController2D
