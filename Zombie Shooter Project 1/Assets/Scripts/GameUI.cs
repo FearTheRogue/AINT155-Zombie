@@ -9,14 +9,23 @@ public class GameUI : MonoBehaviour {
     public Text scoreText, healthText;
     public Button pause;
 
+    private Animator scoreAnim;
+
+
     public int playerScore = 0;
 
+    private void Start()
+    {
+        scoreAnim = GetComponent<Animator>();
+        //scoreAnim.SetBool("isScoreOn", false);
+        scoreAnim.enabled = false;
+        //print(scoreAnim.enabled = false);
+    }
 
     private void OnEnable()
     {
         Player.OnUpdateHealth += UpdateHealthBar;
         AddScore.OnSendScore += UpdateScore;
-
     }
 
     private void OnDisable()
@@ -39,5 +48,8 @@ public class GameUI : MonoBehaviour {
     {
         playerScore += theScore;
         scoreText.text = "SCORE: " + playerScore.ToString();
+        
+        print(scoreAnim.enabled = true);
+        //scoreAnim.enabled = true;
     }
 } // GameUI
