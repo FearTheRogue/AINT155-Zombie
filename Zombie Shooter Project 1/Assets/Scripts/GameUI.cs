@@ -7,17 +7,16 @@ public class GameUI : MonoBehaviour {
 
     public Slider healthBar;
     public Text scoreText, healthText;
-    public Button pause;
+    //public Button pause;
 
     private Animator scoreAnim;
-
 
     public int playerScore = 0;
 
     private void Start()
     {
         scoreAnim = GetComponent<Animator>();
-        //scoreAnim.SetBool("isScoreOn", false);
+        scoreAnim.SetBool("isScoreOn", false);
         scoreAnim.enabled = false;
         //print(scoreAnim.enabled = false);
     }
@@ -50,6 +49,6 @@ public class GameUI : MonoBehaviour {
         scoreText.text = "SCORE: " + playerScore.ToString();
         
         print(scoreAnim.enabled = true);
-        //scoreAnim.enabled = true;
+        scoreAnim.enabled = true;
     }
 } // GameUI
