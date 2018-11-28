@@ -37,14 +37,14 @@ public class DamageIncrease : MonoBehaviour
      * the total time the pickup is active in seconds
      */
     private float time = 5;
-    private float NewfireTime = 0.1f;
+    //private float NewfireTime = 0.1f;
 
     /*
      * oldPrefab
      * stores the original bullet prefab on the player weapon
      */ 
     private GameObject oldPrefab;
-    private float oldFireTime;
+    //private float oldFireTime;
 
     /*
      * Start
@@ -65,7 +65,7 @@ public class DamageIncrease : MonoBehaviour
          * see link: https://docs.unity3d.com/ScriptReference/GameObject.GetComponentInChildren.html
          */
         oldPrefab = transform.GetComponentInChildren<Weapon>().bulletPrefab;
-        oldFireTime = transform.GetComponentInChildren<Weapon>().fireTime;
+       //oldFireTime = transform.GetComponentInChildren<Weapon>().fireTime;
         /*
          * LOAD THE HIGH DAMAGE BULLET PREFAB AND PUT IT INTO THE PLAYER WEAPON
          * we use "Resources.Load" to get the high power bullet
@@ -77,7 +77,7 @@ public class DamageIncrease : MonoBehaviour
          * see link: https://docs.unity3d.com/ScriptReference/GameObject.GetComponentInChildren.html
          */
         transform.GetComponentInChildren<Weapon>().bulletPrefab = Resources.Load("bullet Damage Increase") as GameObject;
-        transform.GetComponentInChildren<Weapon>().fireTime = NewfireTime;
+        //transform.GetComponentInChildren<Weapon>().fireTime = NewfireTime;
         /*
          * SET A TIMER TO SWAP BULLETS BACK AGAIN
          * set an Invoke timer to call the "TimeOut" method
@@ -105,7 +105,7 @@ public class DamageIncrease : MonoBehaviour
          * see link: https://docs.unity3d.com/ScriptReference/GameObject.GetComponentInChildren.html
          */
         transform.GetComponentInChildren<Weapon>().bulletPrefab = oldPrefab;
-        transform.GetComponentInChildren<Weapon>().fireTime = oldFireTime;
+        //transform.GetComponentInChildren<Weapon>().fireTime = oldFireTime;
         /*
          * DESTROY THIS COMPONENT
          * here we remove this component (DamageIncrease) from the player GameObject
