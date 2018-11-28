@@ -9,13 +9,13 @@ public class GameUI : MonoBehaviour {
     public Text scoreText, healthText;
     //public Button pause;
 
-    private Animator scoreAnim;
+    public Animator scoreAnim;
 
     public int playerScore = 0;
 
     private void Start()
     {
-        scoreAnim = GetComponent<Animator>();
+        //scoreAnim = GetComponent<Animator>();
         //scoreAnim.SetBool("isScoreOn", false);
         //print(scoreAnim.enabled = false);
     }
@@ -43,13 +43,9 @@ public class GameUI : MonoBehaviour {
     }
 
     private void UpdateScore(int theScore)
-    {
+    {   
         playerScore += theScore;
         scoreText.text = "SCORE: " + playerScore.ToString();
-
         scoreAnim.SetTrigger("ScoreTrigger");
-
-        //print(scoreAnim.enabled = true);
-        //scoreAnim.enabled = true;
     }
 } // GameUI
