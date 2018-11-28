@@ -36,7 +36,7 @@ public class DamageIncrease : MonoBehaviour
      * time
      * the total time the pickup is active in seconds
      */
-    private float time = 5;
+    private float time = 10;
     //private float NewfireTime = 0.1f;
 
     /*

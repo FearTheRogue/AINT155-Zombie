@@ -35,7 +35,7 @@ public class AttackSpeed : MonoBehaviour
      * time
      * the total time the pickup is active in seconds
      */
-    private float time = 3;
+    private float time = 15;
 
     /*
      * speed
