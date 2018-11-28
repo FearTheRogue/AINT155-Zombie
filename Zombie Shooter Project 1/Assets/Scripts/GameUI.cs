@@ -16,8 +16,7 @@ public class GameUI : MonoBehaviour {
     private void Start()
     {
         scoreAnim = GetComponent<Animator>();
-        scoreAnim.SetBool("isScoreOn", false);
-        scoreAnim.enabled = false;
+        //scoreAnim.SetBool("isScoreOn", false);
         //print(scoreAnim.enabled = false);
     }
 
@@ -47,8 +46,10 @@ public class GameUI : MonoBehaviour {
     {
         playerScore += theScore;
         scoreText.text = "SCORE: " + playerScore.ToString();
-        
-        print(scoreAnim.enabled = true);
-        scoreAnim.enabled = true;
+
+        scoreAnim.SetTrigger("ScoreTrigger");
+
+        //print(scoreAnim.enabled = true);
+        //scoreAnim.enabled = true;
     }
 } // GameUI
