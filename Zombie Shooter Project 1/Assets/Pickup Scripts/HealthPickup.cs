@@ -49,7 +49,14 @@ public class HealthPickup : MonoBehaviour
          * NOTE: we add health using minus health (?!??!) 
          *       this is because the TakeDamage method will remove the health, so we give it minus health to add instead!
          */
-        other.transform.SendMessage("TakeDamage", -health, SendMessageOptions.DontRequireReceiver);
+        if (health >= 100)
+        {
+            print("you have too much health");
+        } else if (health <= 100)
+        {
+            other.transform.SendMessage("TakeDamage", -health, SendMessageOptions.DontRequireReceiver);
+        }
+        
 
 
         /*
