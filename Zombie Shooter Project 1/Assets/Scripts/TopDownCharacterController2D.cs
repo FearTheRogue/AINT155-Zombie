@@ -12,8 +12,7 @@ public class TopDownCharacterController2D : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rigidbody2D = GetComponent<Rigidbody2D>();
-        //walkAnim = GetComponent<Animator>();
-        walkAnim.SetBool("isWalking", false);
+        walkAnim.SetBool("isWalking_02", false);
 	}
 	
 	// Update is called once per frame
@@ -22,25 +21,16 @@ public class TopDownCharacterController2D : MonoBehaviour {
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
 
-        //Update();
-        //print(walkAnim.enabled = true);
-
         rigidbody2D.velocity = new Vector2(x, y) * speed;
         rigidbody2D.angularVelocity = 0.0f;
 
         if (rigidbody2D.velocity == Vector2.zero)
         {
-            walkAnim.SetBool("isWalking", false);
+            walkAnim.SetBool("isWalking_02", false);
         }
         else
         {
-            walkAnim.SetBool("isWalking", true);
+            walkAnim.SetBool("isWalking_02", true);
         }
 	}
-
-    //private void Update()
-    //{
-    //        walkAnim.SetBool("isWalking", true);
-    //}
-
 } // TopDownCharacterController2D
