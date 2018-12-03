@@ -6,12 +6,14 @@ using UnityEngine.UI;
 public class GameUI : MonoBehaviour {
 
     public Slider healthBar;
-    public Text scoreText, healthText;
+    public Text scoreText, healthText, deathText;
+    
     //public Button pause;
 
     public Animator scoreAnim;
 
     public int playerScore = 0;
+    public int killCounter = 1;
 
     private void Start()
     {
@@ -24,12 +26,14 @@ public class GameUI : MonoBehaviour {
     {
         Player.OnUpdateHealth += UpdateHealthBar;
         AddScore.OnSendScore += UpdateScore;
+        Enemy.OnSendKill += UpdateCounter;
     }
 
     private void OnDisable()
     {
         Player.OnUpdateHealth -= UpdateHealthBar;
         AddScore.OnSendScore -= UpdateScore;
+        Enemy.OnSendKill -= UpdateCounter;
     }
 
     public void PauseTheGame()
@@ -47,5 +51,11 @@ public class GameUI : MonoBehaviour {
         playerScore += theScore;
         scoreText.text = "SCORE: " + playerScore.ToString();
         scoreAnim.SetTrigger("ScoreTrigger");
+    }
+
+    private void UpdateCounter(int theCounter)
+    {
+        killCounter += theCounter;
+        deathText.text = "x " + killCounter.ToString();
     }
 } // GameUI
