@@ -27,3 +27,5 @@ Font:
 
 Bugs:
 - Pause button doesn't work
+- When collecting pick ups, character can occasionally run outside the playable area
+- When collecting multiple pick ups, character occasionally cannot collect any more pick ups, for a short time
