@@ -24,14 +24,12 @@ public class GameUI : MonoBehaviour {
     {
         Player.OnUpdateHealth += UpdateHealthBar;
         AddScore.OnSendScore += UpdateScore;
-       // Enemy.OnSendKill += UpdateCounter;
     }
 
     private void OnDisable()
     {
         Player.OnUpdateHealth -= UpdateHealthBar;
         AddScore.OnSendScore -= UpdateScore;
-        // Enemy.OnSendKill -= UpdateCounter;
     }
 
     public void PauseTheGame()
@@ -51,9 +49,4 @@ public class GameUI : MonoBehaviour {
         scoreAnim.SetTrigger("ScoreTrigger");
         deathText.text = "x " + killCounter++.ToString();
     }
-
-    //private void UpdateCounter(int theCounter)
-    //{
-    //    deathText.text = "x " + killCounter.ToString();
-    //}
 } // GameUI
