@@ -13,6 +13,7 @@ S - Move Down
 D - Move Right
 Cursor - Aim
 Left Mouse Button - Fire
+Pick Ups last 15 seconds
 
 References:
 
