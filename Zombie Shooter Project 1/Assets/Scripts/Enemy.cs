@@ -9,8 +9,6 @@ public class EnemySpawnedEvent : UnityEvent<Transform> { }
 public class Enemy : MonoBehaviour {
 
     public EnemySpawnedEvent onSpawn;
-    public delegate void SendKill(int theCounter);
-    public static event SendKill OnSendKill;
 
     // Use this for initialization
     private void Start() {

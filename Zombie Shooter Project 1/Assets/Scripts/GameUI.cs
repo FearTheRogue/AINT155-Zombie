@@ -8,7 +8,7 @@ public class GameUI : MonoBehaviour {
     public Slider healthBar;
     public Text scoreText, healthText, deathText;
     
-    //public Button pause;
+    //public Button pause; //Needs to be Implemented
 
     public Animator scoreAnim;
 
@@ -17,23 +17,21 @@ public class GameUI : MonoBehaviour {
 
     private void Start()
     {
-        //scoreAnim = GetComponent<Animator>();
-        //scoreAnim.SetBool("isScoreOn", false);
-        //print(scoreAnim.enabled = false);
+
     }
 
     private void OnEnable()
     {
         Player.OnUpdateHealth += UpdateHealthBar;
         AddScore.OnSendScore += UpdateScore;
-        Enemy.OnSendKill += UpdateCounter;
+       // Enemy.OnSendKill += UpdateCounter;
     }
 
     private void OnDisable()
     {
         Player.OnUpdateHealth -= UpdateHealthBar;
         AddScore.OnSendScore -= UpdateScore;
-        Enemy.OnSendKill -= UpdateCounter;
+        // Enemy.OnSendKill -= UpdateCounter;
     }
 
     public void PauseTheGame()
@@ -51,11 +49,11 @@ public class GameUI : MonoBehaviour {
         playerScore += theScore;
         scoreText.text = "SCORE: " + playerScore.ToString();
         scoreAnim.SetTrigger("ScoreTrigger");
+        deathText.text = "x " + killCounter++.ToString();
     }
 
-    private void UpdateCounter(int theCounter)
-    {
-        killCounter += theCounter;
-        deathText.text = "x " + killCounter.ToString();
-    }
+    //private void UpdateCounter(int theCounter)
+    //{
+    //    deathText.text = "x " + killCounter.ToString();
+    //}
 } // GameUI
