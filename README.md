@@ -1,19 +1,19 @@
 James Bridgman
 10587522
-Computing & Games Development
-AINT155 - Games Workshop
+- Computing & Games Development
+- AINT155 - Games Workshop
 
 Title: 
-Unity 2D Zombie Shooter
+- Unity 2D Zombie Shooter
 
 Instructions:
-W - Move Up
-A - Move Left
-S - Move Down 
-D - Move Right
-Cursor - Aim
-Left Mouse Button - Fire
-Pick Ups last 15 seconds
+- W - Move Up
+- A - Move Left
+- S - Move Down 
+- D - Move Right
+- Cursor - Aim
+- Left Mouse Button - Fire
+- Pick Ups last 15 seconds
 
 References:
 
