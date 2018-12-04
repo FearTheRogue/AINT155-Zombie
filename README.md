@@ -24,3 +24,6 @@ Artwork for Pick Ups:
 
 Font: 
 - https://www.dafont.com/search.php?q=close+and+open
+
+Bugs:
+- Pause button doesn't work
