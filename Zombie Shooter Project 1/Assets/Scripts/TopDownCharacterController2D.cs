@@ -9,6 +9,8 @@ public class TopDownCharacterController2D : MonoBehaviour {
     public float speed = 5.0f;
     new Rigidbody2D rigidbody2D;
 
+
+
 	// Use this for initialization
 	void Start () {
         rigidbody2D = GetComponent<Rigidbody2D>();
