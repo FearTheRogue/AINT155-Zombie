@@ -30,11 +30,12 @@ public class GameUI : MonoBehaviour {
     {
         Player.OnUpdateHealth -= UpdateHealthBar;
         AddScore.OnSendScore -= UpdateScore;
+        PlayerPrefs.SetInt("Score", playerScore);
     }
 
     public void PauseTheGame()
     {
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
     }
 
     private void UpdateHealthBar(int health)
