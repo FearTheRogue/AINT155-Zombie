@@ -10,20 +10,20 @@ public class TutorialController : MonoBehaviour
 
     void Start ()
     {
-        dialogue.text = "Welcome player! This game is all about survival. But first!";
-        Invoke("RevealPistol", 2);
+        dialogue.text = "Welcome player! This game is all about survival. But first! Pick Up this Pistol pickup";
+        Invoke("RevealPistol", 4);
 	}
 
     void RevealPistol()
     {
         pistolPickup.SetActive(true);
-        dialogue.text = "Pick this guy up!";
+        //dialogue.text = "Pick this guy up!";
     }
 
     public void SpawnZombie()
     {
         dialogue.text = "Kill the zombie!";
-        Invoke("DoSpawn", 2);
+        Invoke("DoSpawn", 3);
     }
 
     void DoSpawn()
@@ -40,7 +40,7 @@ public class TutorialController : MonoBehaviour
 
     public void Continue()
     {
-
+    
     }
 
 
