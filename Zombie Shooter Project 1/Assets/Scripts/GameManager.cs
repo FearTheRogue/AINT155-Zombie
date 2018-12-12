@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
+
+    //public GameObject tutorialcomp;
 
     public void StartGame()
     {
@@ -28,6 +31,12 @@ public class GameManager : MonoBehaviour {
     public void tutorialLevel()
     {
         SceneManager.LoadScene("Tutorial Level");
+    }
+    
+    public void tutorialComp()
+    {
+        //tutorialcomp = transform.GetComponents<Collider2D>();
+        SceneManager.LoadScene("Zombie Shoot Level 1");
     }
 
     public void ExitGame()
