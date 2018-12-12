@@ -33,6 +33,8 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
+    public SpriteRenderer spriteRenderer;
+
     /*
      * START
      * see link: https://docs.unity3d.com/ScriptReference/MonoBehaviour.Start.html
@@ -40,9 +42,10 @@ public class WeaponManager : MonoBehaviour
      */
     void Start()
     {
+        spriteRenderer = transform.parent.GetComponent<SpriteRenderer>();
         /*
          * CALL CHANGE WEAPON, SELECT FIRST WEAPON
-         */ 
+         */
         ChangeWeapon(0);
     }
 
@@ -81,6 +84,7 @@ public class WeaponManager : MonoBehaviour
                      * see link: https://docs.unity3d.com/ScriptReference/GameObject.SetActive.html
                      */
                     transform.GetChild(i).gameObject.SetActive(true);
+                    spriteRenderer.sprite = transform.GetChild(i).GetComponent<Weapon>().sprite;
                 }
                 else // DEACTIVATE ALL WEAPONS NOT AT INDEX
                 {

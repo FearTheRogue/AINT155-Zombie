@@ -44,7 +44,7 @@ public class WeaponPickup : MonoBehaviour
          * see link: https://docs.unity3d.com/ScriptReference/Component.GetComponentInChildren.html
          */
         WeaponManager weaponManager = other.gameObject.GetComponentInChildren<WeaponManager>();
-
+        
 
         /*
          * if we found a WeaponManager component, we can add the weapon

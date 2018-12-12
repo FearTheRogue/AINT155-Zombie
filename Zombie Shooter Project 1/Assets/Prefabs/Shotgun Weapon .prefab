@@ -205,3 +205,4 @@ MonoBehaviour:
   - {fileID: 4741034367560840}
   - {fileID: 4318893243047364}
   fireTime: 0.8
+  sprite: {fileID: 21300006, guid: 24b8eafa64a0136469639f6940cf4d4d, type: 3}

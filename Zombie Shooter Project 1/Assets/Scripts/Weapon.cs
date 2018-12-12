@@ -8,6 +8,8 @@ public class Weapon : MonoBehaviour {
     public Transform[] bulletSpawn;
     public float fireTime = 0.5f;
 
+    public Sprite sprite;
+
     private bool isFiring = false;
 
     private void SetFiring()
