@@ -25,6 +25,11 @@ public class GameManager : MonoBehaviour {
         SceneManager.LoadScene("Zombie Shooter Level 1");
     }
 
+    public void tutorialLevel()
+    {
+        SceneManager.LoadScene("Tutorial Level");
+    }
+
     public void ExitGame()
     {
         Application.Quit();

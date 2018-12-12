@@ -10,13 +10,14 @@ public class TutorialController : MonoBehaviour
 
     void Start ()
     {
-        dialogue.text = "You need a weapon!";
+        dialogue.text = "Welcome player! This game is all about survival. But first!";
         Invoke("RevealPistol", 2);
 	}
 
     void RevealPistol()
     {
         pistolPickup.SetActive(true);
+        dialogue.text = "Pick this guy up!";
     }
 
     public void SpawnZombie()
