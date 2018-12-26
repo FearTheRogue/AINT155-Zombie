@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameUI : MonoBehaviour {
+
+    [SerializeField]
+    public GameObject pausePanel;
 
     public Slider healthBar;
     public Text scoreText, healthText, deathText;
@@ -17,7 +21,7 @@ public class GameUI : MonoBehaviour {
 
     private void Start()
     {
-
+        Time.timeScale = 1f;
     }
 
     private void OnEnable()
@@ -33,11 +37,6 @@ public class GameUI : MonoBehaviour {
         PlayerPrefs.SetInt("Score", playerScore);
     }
 
-    public void PauseTheGame()
-    {
-        //Time.timeScale = 0f;
-    }
-
     private void UpdateHealthBar(int health)
     {
         healthBar.value = health;
@@ -50,4 +49,23 @@ public class GameUI : MonoBehaviour {
         scoreAnim.SetTrigger("ScoreTrigger");
         deathText.text = "x " + killCounter++.ToString();
     }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0f;
+        pausePanel.SetActive(true);
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f;
+        pausePanel.SetActive(false);
+    }
+
+    public void QuitGame()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Main Menu");
+    }
+
 } // GameUI
