@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameUI : MonoBehaviour {
 
     [SerializeField]
-    public GameObject pausePanel;
+    private GameObject pausePanel;
 
     public Slider healthBar;
     public Text scoreText, healthText, deathText;
