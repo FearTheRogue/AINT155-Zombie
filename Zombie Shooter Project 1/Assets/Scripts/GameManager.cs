@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour {
 
     public void tutorialLevel()
     {
-        SceneManager.LoadScene("Tutorial Level");
+        SceneManager.LoadScene("Test Tutorial Level (Dialogue Change)");
     }
     
     public void tutorialComp()
