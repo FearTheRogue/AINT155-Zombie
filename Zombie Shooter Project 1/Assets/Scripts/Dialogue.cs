@@ -11,36 +11,51 @@ public class Dialogue : MonoBehaviour
     private int index;
     public float typingSpeed;
 
-    //public Transform playerMovement;
+    private float idlePlayerMovement = 0;
+
+    public TopDownCharacterController2D playerMovement;
+
     public GameObject continuebutton;
     public GameObject pistolPickup;
     public GameObject Infected;
     public GameObject gate;
     public GameObject healthBar;
     public GameObject pickUp;
-    
+
+
 
     void Start()
     {
         StartCoroutine(Type());
-        //playerMovement = GetComponent<Transform>();
-        
+
+        //playerMovement = GameObject.Find("Player").GetComponent<TopDownCharacterController2D>();
+        //playerMovement = GetComponent<TopDownCharacterController2D>();
+        //playerMovement = GameObject.Find("player").GetComponent<TopDownCharacterController2D>();
+        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<TopDownCharacterController2D>();
+
     }
 
     void Update()
     {
-        
+
         if (DialogueText.text == sentences[index])
-        {
+        {   
             continuebutton.SetActive(true);
         }
 
-        Time.timeScale = 0f;
+        Time.timeScale = 1f; 
         Spawns();
+
+        //IdleRigidbody2D.velocity = Vector2.zero;
+
+        //playerMovement = GameObject.Find("player").GetComponent<TopDownCharacterController2D>();
+
     }
 
     IEnumerator Type()
     {
+        playerMovement.speed = idlePlayerMovement;
+
         DialogueText.text = "";
         foreach (char letter in sentences[index].ToCharArray())
         {
@@ -51,8 +66,6 @@ public class Dialogue : MonoBehaviour
 
     public void NextSentence()
     {
-        //playerMovement.position = new Vector3(0,0);
-            
         continuebutton.SetActive(false);
 
         if (index < sentences.Length - 1)
@@ -70,14 +83,23 @@ public class Dialogue : MonoBehaviour
 
     public void Spawns()
     {
+
+        if(index == 8)
+        {
+            playerMovement.speed = 5f;
+        }
         if (index == 9)
         {
+            playerMovement.speed = 5f;
+
             Time.timeScale = 1f;
             pistolPickup.SetActive(true);
             continuebutton.SetActive(false);
         }
         else if (index == 15)
         {
+            playerMovement.speed = 5f;
+
             Time.timeScale = 1f;
             Infected.SetActive(true);
             continuebutton.SetActive(false);
@@ -90,6 +112,8 @@ public class Dialogue : MonoBehaviour
         }
         else if (index == 18)
         {
+            playerMovement.speed = 5f;
+
             Time.timeScale = 1f;
             pickUp.SetActive(true);
             continuebutton.SetActive(false);
