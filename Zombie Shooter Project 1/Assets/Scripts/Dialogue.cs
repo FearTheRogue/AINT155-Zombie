@@ -14,12 +14,13 @@ public class Dialogue : MonoBehaviour
     private float idlePlayerMovement = 0;
 
     public TopDownCharacterController2D playerMovement;
+    public ParticleSystem gateFX;
 
     public GameObject continuebutton;
     public GameObject pistolPickup;
     public GameObject Infected;
     public GameObject gate;
-    public GameObject healthBar;
+    public GameObject healthBar, zHealthBar;
     public GameObject pickUp;
 
 
@@ -96,12 +97,15 @@ public class Dialogue : MonoBehaviour
             pistolPickup.SetActive(true);
             continuebutton.SetActive(false);
         }
+        else if (index == 13)
+        {
+            Infected.SetActive(true);
+            continuebutton.SetActive(true);
+        }
         else if (index == 15)
         {
             playerMovement.speed = 5f;
-
-            Time.timeScale = 1f;
-            Infected.SetActive(true);
+            zHealthBar.SetActive(true);
             continuebutton.SetActive(false);
         }
         else if(index == 17)
@@ -117,6 +121,9 @@ public class Dialogue : MonoBehaviour
             Time.timeScale = 1f;
             pickUp.SetActive(true);
             continuebutton.SetActive(false);
+        } else if(index == 22)
+        {
+            gateFX.Play();
         }
     }
 }

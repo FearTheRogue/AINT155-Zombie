@@ -10,10 +10,9 @@ public class SmoothFollow2D : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-        Vector3 newPos = new Vector3 (target.position.x, target.position.y, transform.position.z);
+        Vector3 newPos = new Vector3 (target.position.x, transform.position.y, transform.position.z);
 
         transform.position = Vector3.Lerp(transform.position, newPos, (smoothing * 0.001f));
-
     }
 
 } // SmoothFollow2D
