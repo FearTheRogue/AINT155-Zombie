@@ -121,9 +121,16 @@ public class Dialogue : MonoBehaviour
             Time.timeScale = 1f;
             pickUp.SetActive(true);
             continuebutton.SetActive(false);
-        } else if(index == 22)
+        }
+        else if(index == 22)
         {
             gateFX.Play();
+            continuebutton.SetActive(false);
+        }
+        else if (index == 24)
+        {
+            playerMovement.speed = 5f;
+
         }
     }
 }
