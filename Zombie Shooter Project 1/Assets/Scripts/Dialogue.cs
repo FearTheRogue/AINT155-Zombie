@@ -15,6 +15,7 @@ public class Dialogue : MonoBehaviour
 
     public TopDownCharacterController2D playerMovement;
     public ParticleSystem gateFX;
+    public GameObject dialogueBox;
 
     public GameObject continuebutton;
     public GameObject pistolPickup;
@@ -22,13 +23,21 @@ public class Dialogue : MonoBehaviour
     public GameObject gate;
     public GameObject healthBar, zHealthBar;
     public GameObject pickUp;
+    public Animation FadeIn;
 
-
-
-    void Start()
+    public void Awake()
     {
-        StartCoroutine(Type());
+        continuebutton.SetActive(false);
+        dialogueBox.SetActive(false);
+        Invoke("StartConvo", 4);
+    }
 
+    void StartConvo()
+    {
+        FadeIn.enabled = true;
+        continuebutton.SetActive(true);
+        dialogueBox.SetActive(true);
+        StartCoroutine(Type());
         //playerMovement = GameObject.Find("Player").GetComponent<TopDownCharacterController2D>();
         //playerMovement = GetComponent<TopDownCharacterController2D>();
         //playerMovement = GameObject.Find("player").GetComponent<TopDownCharacterController2D>();
@@ -130,7 +139,7 @@ public class Dialogue : MonoBehaviour
         else if (index == 24)
         {
             playerMovement.speed = 5f;
-
+            dialogueBox.SetActive(false);
         }
     }
 }
