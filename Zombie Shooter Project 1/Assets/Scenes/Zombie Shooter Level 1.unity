@@ -24716,7 +24716,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1031908636
 Transform:
   m_ObjectHideFlags: 0
@@ -29470,7 +29470,7 @@ GameObject:
   m_Layer: 13
   m_Name: Weapon Manager
   m_TagString: Untagged
-  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -29766,7 +29766,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1291323817
 Transform:
   m_ObjectHideFlags: 0
@@ -49420,6 +49420,7 @@ GameObject:
   - component: {fileID: 2065351080}
   - component: {fileID: 2065351079}
   - component: {fileID: 2065351078}
+  - component: {fileID: 2065351072}
   - component: {fileID: 2065351081}
   m_Layer: 13
   m_Name: Hero
@@ -49455,6 +49456,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkAnim: {fileID: 1284095308}
   speed: 5
+--- !u!114 &2065351072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2065351069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 277842ab725a7194cbc1a8aa4e3882fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &2065351073
 Rigidbody2D:
   serializedVersion: 4

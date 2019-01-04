@@ -140,6 +140,7 @@ public class Dialogue : MonoBehaviour
         {
             playerMovement.speed = 5f;
             dialogueBox.SetActive(false);
+            continuebutton.SetActive(false);
         }
     }
 }
