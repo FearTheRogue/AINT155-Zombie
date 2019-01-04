@@ -418,6 +418,8 @@ MonoBehaviour:
   target: {fileID: 2065351075}
   smoothing: 20
   main: {fileID: 519420031}
+  maxX: 1
+  minX: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -5871,7 +5873,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1149159184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5925,7 +5927,6 @@ MonoBehaviour:
   healthBar: {fileID: 2046367745}
   zHealthBar: {fileID: 1774660874}
   pickUp: {fileID: 398701801}
-  FadeIn: {fileID: 0}
 --- !u!4 &1149159185
 Transform:
   m_ObjectHideFlags: 0

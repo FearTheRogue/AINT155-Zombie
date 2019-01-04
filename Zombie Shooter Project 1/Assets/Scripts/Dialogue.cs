@@ -23,7 +23,7 @@ public class Dialogue : MonoBehaviour
     public GameObject gate;
     public GameObject healthBar, zHealthBar;
     public GameObject pickUp;
-    public Animation FadeIn;
+    //public Animation FadeIn;
 
     public void Awake()
     {
@@ -34,7 +34,7 @@ public class Dialogue : MonoBehaviour
 
     void StartConvo()
     {
-        FadeIn.enabled = true;
+        //FadeIn.enabled = true;
         continuebutton.SetActive(true);
         dialogueBox.SetActive(true);
         StartCoroutine(Type());
