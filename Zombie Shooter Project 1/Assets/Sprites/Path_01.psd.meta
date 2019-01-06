@@ -1,22 +1,20 @@
 fileFormatVersion: 2
-guid: 3eba22a3354428246807153ee4e87bb3
+guid: a6d3e999028f9da40b9b833ff4086b73
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Walls_Temp_01_0
-    21300002: Walls_Temp_01_1
-    21300004: Walls_Temp_01_2
-    21300006: Walls_Temp_01_3
-    21300008: Walls_Temp_01_4
-    21300010: Walls_Temp_01_5
-    21300012: Walls_Temp_01_6
-    21300014: Walls_Temp_01_7
-    21300016: Walls_Temp_01_8
-    21300018: Walls_Temp_01_9
-    21300020: Walls_Temp_01_10
-    21300022: Walls_Temp_01_11
-    21300024: Walls_Temp_01_12
-    21300026: Walls_Temp_01_13
-    21300028: Walls_Temp_01_14
+    21300000: Path_01_0
+    21300002: Path_01_1
+    21300004: Path_01_2
+    21300006: Path_01_3
+    21300008: Path_01_4
+    21300010: Path_01_5
+    21300012: Path_01_6
+    21300014: Path_01_7
+    21300016: Path_01_8
+    21300018: Path_01_9
+    21300020: Path_01_10
+    21300022: Path_01_11
+    21300024: Path_01_12
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -108,7 +106,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Walls_Temp_01_0
+      name: Path_01_0
       rect:
         serializedVersion: 2
         x: 0
@@ -122,13 +120,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8596e76c1e9853c448d87adf185824cb
+      spriteID: 6cf4af1ce6ff77442bf64d185cdd8e44
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walls_Temp_01_1
+      name: Path_01_1
       rect:
         serializedVersion: 2
         x: 64
@@ -142,13 +140,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f9a7266a3348b148bc0988e5a3bcc40
+      spriteID: f1101428a064ad14cb2b815c69780551
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walls_Temp_01_2
+      name: Path_01_2
       rect:
         serializedVersion: 2
         x: 128
@@ -162,13 +160,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57f666ca7d7d9834c8ff9c23946120a7
+      spriteID: 33a61ecd155e27e449f4824d873f3bc7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walls_Temp_01_3
+      name: Path_01_3
       rect:
         serializedVersion: 2
         x: 192
@@ -182,13 +180,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 569506a19e590e741997034cf4e2b727
+      spriteID: 1e0c1b0010d56ab4b8ff48eeb886e0c3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walls_Temp_01_4
+      name: Path_01_4
       rect:
         serializedVersion: 2
         x: 256
@@ -202,13 +200,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35bdf1379635f5e4a915332e0071bb32
+      spriteID: d1fa1f60fd18d764e8367bfb8d82d30a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walls_Temp_01_5
+      name: Path_01_5
       rect:
         serializedVersion: 2
         x: 0
@@ -222,13 +220,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 448852edc8dd8364782416e091e61801
+      spriteID: 226da1ffa9adf10409d8af4f6693e427
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walls_Temp_01_6
+      name: Path_01_6
       rect:
         serializedVersion: 2
         x: 64
@@ -242,13 +240,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 453a0062dc6e2614c9e76182a0a3ffee
+      spriteID: 4259df2f5a0234f48a044744bc4a00de
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walls_Temp_01_7
+      name: Path_01_7
       rect:
         serializedVersion: 2
         x: 128
@@ -262,13 +260,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2427df342aa2154c827b2381fbe21e9
+      spriteID: 1eef06d9c28cfe14e824830e6445f0c6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walls_Temp_01_8
+      name: Path_01_8
       rect:
         serializedVersion: 2
         x: 192
@@ -282,33 +280,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f680df79c7bb2234798ff9a3afe63018
+      spriteID: 5e180f9fb45c447498e47e7508d5e6f0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walls_Temp_01_9
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9d8609978a2b56440b9c7aac045af841
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walls_Temp_01_10
+      name: Path_01_9
       rect:
         serializedVersion: 2
         x: 0
@@ -322,13 +300,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 553898898945e6340a5feddcdc906749
+      spriteID: af679894c1c018d4da76d0620468c061
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walls_Temp_01_11
+      name: Path_01_10
       rect:
         serializedVersion: 2
         x: 64
@@ -342,13 +320,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f93a964e90b76646af2e221d6ceab59
+      spriteID: 10996de89d8a73c44b985ce2947dcdff
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walls_Temp_01_12
+      name: Path_01_11
       rect:
         serializedVersion: 2
         x: 128
@@ -362,13 +340,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30394bea905ee81448486a0080f3494c
+      spriteID: 202401ab67c60234f9265bbb357ba720
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walls_Temp_01_13
+      name: Path_01_12
       rect:
         serializedVersion: 2
         x: 192
@@ -382,27 +360,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11839d19222721642abe960c9b3f3a91
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walls_Temp_01_14
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 269d5f265cd5a0f4280ade26f3fbf899
+      spriteID: fc8b37aba9315fd4eb6259625d6205f3
       vertices: []
       indices: 
       edges: []
@@ -410,7 +368,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 68a0c8facc4eb204fb7a4b50955b54ac
+    spriteID: 7fe96a095db63ec4685a48e74cc08c7b
     vertices: []
     indices: 
     edges: []
