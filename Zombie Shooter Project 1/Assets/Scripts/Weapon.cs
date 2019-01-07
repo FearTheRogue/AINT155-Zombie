@@ -1,16 +1,57 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Weapon : MonoBehaviour {
+
+    public delegate void UpdateSendAmmo(int theAmmoCount);
+    public static event UpdateSendAmmo OnSendAmmo;
+    public delegate void UpdateSendReloading(bool isReloading);
+    public static event UpdateSendReloading OnSendReload;
 
     public GameObject bulletPrefab;
     public Transform[] bulletSpawn;
     public float fireTime = 0.5f;
 
     public Sprite sprite;
+    //public Sprite gunImage;
+
+    public int maxAmmo = 10;
+    public int currentAmmo;
+    public float reloadTime = 1f;
 
     private bool isFiring = false;
+    private bool isReloading = false;
+    //public Text reloading;
+
+    void Start()
+    {
+        currentAmmo = maxAmmo;
+    }
+
+    void OnEnable()
+    {
+        isReloading = false;
+       // reloading.enabled = false;
+    }
+
+    public void OnAmmoCount()
+    {
+        if (OnSendAmmo != null)
+        {
+            OnSendAmmo(currentAmmo);
+        }
+    }
+
+    public void OnReloading(bool isReloading)
+    {
+        if(OnSendReload != null)
+        {
+            OnSendReload(isReloading);
+        }
+    }
 
     private void SetFiring()
     {
@@ -21,6 +62,8 @@ public class Weapon : MonoBehaviour {
     {
         isFiring = true;
 
+        currentAmmo--;
+
         for (int i = 0; i < bulletSpawn.Length; i++)
         {
             Instantiate(bulletPrefab, bulletSpawn[i].position, bulletSpawn[i].rotation);
@@ -30,12 +73,23 @@ public class Weapon : MonoBehaviour {
         {
             GetComponent<AudioSource>().Play();
         }
-
         Invoke("SetFiring", fireTime);
+
     }
     
 	// Update is called once per frame
 	private void Update () {
+
+
+        if (isReloading)
+            return;
+
+        if(currentAmmo <= 0)
+        {
+            StartCoroutine(Reload());
+            return;
+        }
+
         if (Input.GetMouseButton(0))
         {
             if (!isFiring)
@@ -43,5 +97,27 @@ public class Weapon : MonoBehaviour {
                 Fire();
             }
         }
-	}
+
+        OnAmmoCount();
+        OnReloading(isReloading);
+
+    }
+
+    IEnumerator Reload()
+    {
+        isReloading = true;
+
+       // reloading.enabled = true;
+
+        Debug.Log("Reloading..");
+
+        yield return new WaitForSeconds(reloadTime);
+
+        currentAmmo = maxAmmo;
+
+        isReloading = false;
+        //reloading.enabled = false;
+    }
+
+
 } // Weapon

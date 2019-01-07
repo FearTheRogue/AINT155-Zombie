@@ -86,3 +86,7 @@ MonoBehaviour:
   - {fileID: 4544922681372382}
   fireTime: 0.2
   sprite: {fileID: 21300004, guid: 24b8eafa64a0136469639f6940cf4d4d, type: 3}
+  maxAmmo: 10
+  currentAmmo: 0
+  reloadTime: 1
+  AmmoText: {fileID: 0}

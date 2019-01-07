@@ -30,10 +30,12 @@
  **********************************************************/
 
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponManager : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
+    //public Image GunImage;
 
     /*
      * START
@@ -43,6 +45,7 @@ public class WeaponManager : MonoBehaviour
     void Start()
     {
         spriteRenderer = transform.parent.GetComponent<SpriteRenderer>();
+        //GunImage = transform.parent.GetComponent<Image>();
         /*
          * CALL CHANGE WEAPON, SELECT FIRST WEAPON
          */
@@ -85,6 +88,7 @@ public class WeaponManager : MonoBehaviour
                      */
                     transform.GetChild(i).gameObject.SetActive(true);
                     spriteRenderer.sprite = transform.GetChild(i).GetComponent<Weapon>().sprite;
+                   // GunImage.sprite = transform.GetChild(i).GetComponent<Weapon>().sprite;
                 }
                 else // DEACTIVATE ALL WEAPONS NOT AT INDEX
                 {
