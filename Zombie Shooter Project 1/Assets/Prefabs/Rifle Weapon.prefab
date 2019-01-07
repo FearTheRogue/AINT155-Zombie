@@ -85,8 +85,9 @@ MonoBehaviour:
   bulletSpawn:
   - {fileID: 4544922681372382}
   fireTime: 0.2
+  MuzzleFlashPrefab: {fileID: 4559752483121844, guid: a6efaf2fc639f894e81fa91df8240ba8,
+    type: 2}
   sprite: {fileID: 21300004, guid: 24b8eafa64a0136469639f6940cf4d4d, type: 3}
-  maxAmmo: 10
+  maxAmmo: 35
   currentAmmo: 0
-  reloadTime: 1
-  AmmoText: {fileID: 0}
+  reloadTime: 3

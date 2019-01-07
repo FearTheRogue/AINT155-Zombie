@@ -68,7 +68,7 @@ public class GameUI : MonoBehaviour {
     {
         ReloadingText.text = "RELOADING...";
 
-        //reloading = true;
+        reloading = Reloading;
 
         if (reloading == true)
         {
@@ -81,7 +81,7 @@ public class GameUI : MonoBehaviour {
             //Reloading = false;
             ReloadingText.enabled = false;
         }
-       // Debug.Log(reloading);
+        //Debug.Log(ReloadingText.text);
     }
 
     private void UpdateHealthBar(int health)

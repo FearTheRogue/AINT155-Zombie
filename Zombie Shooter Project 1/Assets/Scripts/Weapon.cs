@@ -14,6 +14,7 @@ public class Weapon : MonoBehaviour {
     public GameObject bulletPrefab;
     public Transform[] bulletSpawn;
     public float fireTime = 0.5f;
+    public Transform MuzzleFlashPrefab;
 
     public Sprite sprite;
     //public Sprite gunImage;
@@ -24,17 +25,27 @@ public class Weapon : MonoBehaviour {
 
     private bool isFiring = false;
     private bool isReloading = false;
+
+    //public float camShakeAmount = 0.1f;
+    //CameraShake camShake;
+
     //public Text reloading;
 
     void Start()
     {
+        //camShake.GetComponent<CameraShake>();
+        //if(camShake == null)
+        //{
+        //    Debug.LogError("ERROR");
+        //}
+
         currentAmmo = maxAmmo;
     }
 
     void OnEnable()
     {
         isReloading = false;
-       // reloading.enabled = false;
+        //reloading.enabled = false;
     }
 
     public void OnAmmoCount()
@@ -45,7 +56,7 @@ public class Weapon : MonoBehaviour {
         }
     }
 
-    public void OnReloading(bool isReloading)
+    public void OnReloading(bool reloading)
     {
         if(OnSendReload != null)
         {
@@ -67,14 +78,24 @@ public class Weapon : MonoBehaviour {
         for (int i = 0; i < bulletSpawn.Length; i++)
         {
             Instantiate(bulletPrefab, bulletSpawn[i].position, bulletSpawn[i].rotation);
+            Transform MuzzleFlash = Instantiate(MuzzleFlashPrefab, bulletSpawn[i].position, bulletSpawn[i].rotation) as Transform;
+            MuzzleFlash.parent = bulletSpawn[i];
+            float size = Random.Range(0.6f, 0.9f);
+            MuzzleFlash.localScale = new Vector3(size, size, 0);
+            Destroy(MuzzleFlash.gameObject, 0.04f);
         }
+        //camShake.Shake(camShakeAmount, 0.2f);
 
         if (GetComponent<AudioSource>() != null)
         {
             GetComponent<AudioSource>().Play();
         }
         Invoke("SetFiring", fireTime);
+    }
 
+    void Effect()
+    {
+        
     }
     
 	// Update is called once per frame
@@ -107,7 +128,7 @@ public class Weapon : MonoBehaviour {
     {
         isReloading = true;
 
-       // reloading.enabled = true;
+        //reloading.enabled = true;
 
         Debug.Log("Reloading..");
 
