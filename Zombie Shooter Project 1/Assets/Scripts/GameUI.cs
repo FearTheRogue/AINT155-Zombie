@@ -14,6 +14,8 @@ public class GameUI : MonoBehaviour {
 
     //public Transform GunImage;
 
+    //public Button pauseButton;
+
     public Animator scoreAnim;
 
     public int playerScore = 0, ammoCount = 0;
@@ -66,14 +68,16 @@ public class GameUI : MonoBehaviour {
 
     private void UpdateReloading(bool reloading)
     {
-        ReloadingText.text = "RELOADING...";
+        ReloadingText.text = "RELOADING";
 
-        reloading = Reloading;
+        Reloading = reloading;
 
         if (reloading == true)
         {
-            //Reloading = true;
-            //Debug.Log(reloading);
+            //if (GetComponent<AudioSource>() != null)
+            //{
+            //    GetComponent<AudioSource>().Play();
+            //}
             ReloadingText.enabled = true;
         }
         else

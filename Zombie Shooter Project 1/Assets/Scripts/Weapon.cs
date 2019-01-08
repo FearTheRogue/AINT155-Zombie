@@ -26,18 +26,17 @@ public class Weapon : MonoBehaviour {
     private bool isFiring = false;
     private bool isReloading = false;
 
-    //public float camShakeAmount = 0.1f;
-    //CameraShake camShake;
-
-    //public Text reloading;
+    private Shake shake;
 
     void Start()
     {
-        //camShake.GetComponent<CameraShake>();
-        //if(camShake == null)
+        //camShake = Camera.current.GetComponent<CameraShake>();
+        //if (camShake == null)
         //{
         //    Debug.LogError("ERROR");
         //}
+
+        shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
 
         currentAmmo = maxAmmo;
     }
@@ -45,7 +44,6 @@ public class Weapon : MonoBehaviour {
     void OnEnable()
     {
         isReloading = false;
-        //reloading.enabled = false;
     }
 
     public void OnAmmoCount()
@@ -83,13 +81,16 @@ public class Weapon : MonoBehaviour {
             float size = Random.Range(0.6f, 0.9f);
             MuzzleFlash.localScale = new Vector3(size, size, 0);
             Destroy(MuzzleFlash.gameObject, 0.04f);
+            //camShake.Shake(camShakeAmount, 0.06f);
         }
-        //camShake.Shake(camShakeAmount, 0.2f);
+
+        shake.CamShake();
 
         if (GetComponent<AudioSource>() != null)
         {
             GetComponent<AudioSource>().Play();
         }
+
         Invoke("SetFiring", fireTime);
     }
 
@@ -101,6 +102,7 @@ public class Weapon : MonoBehaviour {
 	// Update is called once per frame
 	private void Update () {
 
+        OnReloading(isReloading);
 
         if (isReloading)
             return;
@@ -118,10 +120,7 @@ public class Weapon : MonoBehaviour {
                 Fire();
             }
         }
-
         OnAmmoCount();
-        OnReloading(isReloading);
-
     }
 
     IEnumerator Reload()
@@ -129,6 +128,13 @@ public class Weapon : MonoBehaviour {
         isReloading = true;
 
         //reloading.enabled = true;
+
+        if (GetComponent<AudioSource>() != null)
+        { 
+            GetComponent<AudioSource>().Play();
+            Debug.Log("Reloading Sound from IEnumarator");
+        }
+
 
         Debug.Log("Reloading..");
 

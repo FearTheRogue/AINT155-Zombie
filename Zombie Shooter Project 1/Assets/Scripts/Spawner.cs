@@ -5,7 +5,15 @@ using UnityEngine;
 public class Spawner : MonoBehaviour {
 
     public GameObject prefabToSpawn;
+    //public GameObject prefabBoss;
+
     public float adjustmentAngle = 0;
+
+    public int InfectedMaxCount = 10;
+    public int CurrentInfectedNum = 0;
+
+    public float boundX = 1.2f;
+    public float boundY = 1.2f;
 
     public void Spawn()
     {
@@ -14,8 +22,19 @@ public class Spawner : MonoBehaviour {
 
         Quaternion rotationInRadians = Quaternion.Euler(rotationInDegrees);
 
-        Instantiate(prefabToSpawn, transform.position, rotationInRadians);
+        if(InfectedMaxCount > CurrentInfectedNum)
+        {
+            Instantiate(prefabToSpawn, transform.position, rotationInRadians);
+            CurrentInfectedNum++;
+
+            if (CurrentInfectedNum == 5)
+            {
+                //Instantiate(prefabBoss, transform.position, rotationInRadians);
+            }
+
+        } 
+        //{
+        //    Instantiate(prefabToSpawn, transform.position, rotationInRadians);
+        //}
     }
-
-
 } // Spawner
