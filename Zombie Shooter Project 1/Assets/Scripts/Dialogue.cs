@@ -29,13 +29,13 @@ public class Dialogue : MonoBehaviour
     {
         continuebutton.SetActive(false);
         dialogueBox.SetActive(false);
-        Invoke("StartConvo", 4);
+        Invoke("StartConvo", 2);
     }
 
     void StartConvo()
     {
         //FadeIn.enabled = true;
-        continuebutton.SetActive(true);
+        continuebutton.SetActive(false);
         dialogueBox.SetActive(true);
         StartCoroutine(Type());
         //playerMovement = GameObject.Find("Player").GetComponent<TopDownCharacterController2D>();
