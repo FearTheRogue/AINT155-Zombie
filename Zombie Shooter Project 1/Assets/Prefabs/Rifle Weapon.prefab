@@ -188,5 +188,5 @@ MonoBehaviour:
   maxAmmo: 35
   currentAmmo: 0
   reloadTime: 3
-  fireSound: {fileID: 0}
+  fireSound: {fileID: 8300000, guid: 96918e256986c944c9e514affbabd23e, type: 3}
   reloadSound: {fileID: 0}
