@@ -189,4 +189,4 @@ MonoBehaviour:
   currentAmmo: 0
   reloadTime: 3
   fireSound: {fileID: 8300000, guid: 96918e256986c944c9e514affbabd23e, type: 3}
-  reloadSound: {fileID: 0}
+  reloadSound: {fileID: 8300000, guid: 4438075e8370fde4587644e7f788d0e1, type: 3}

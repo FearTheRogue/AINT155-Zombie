@@ -29,18 +29,8 @@ public class Weapon : MonoBehaviour {
     private bool isFiring = false;
     private bool isReloading = false;
 
-    //private Shake shake;
-
     void Start()
     {
-        //camShake = Camera.current.GetComponent<CameraShake>();
-        //if (camShake == null)
-        //{
-        //    Debug.LogError("ERROR");
-        //}
-
-        
-
         currentAmmo = maxAmmo;
     }
 
@@ -86,11 +76,9 @@ public class Weapon : MonoBehaviour {
             MuzzleFlash.eulerAngles = new Vector3(MuzzleFlash.eulerAngles.x, MuzzleFlash.eulerAngles.y, MuzzleFlash.eulerAngles.z + 90);
 
             Destroy(MuzzleFlash.gameObject, 0.04f);
-            //camShake.Shake(camShakeAmount, 0.06f);
         }
 
         GameObject.FindGameObjectWithTag("MainCamera").SendMessage("DoShake");
-        //shake.CamShake();
 
         if (GetComponent<AudioSource>() != null)
         {
@@ -110,6 +98,7 @@ public class Weapon : MonoBehaviour {
 	private void Update () {
 
         OnReloading(isReloading);
+        forceReload();
 
         if (isReloading)
             return;
@@ -130,6 +119,21 @@ public class Weapon : MonoBehaviour {
         OnAmmoCount();
     }
 
+    private void forceReload()
+    {
+        if (currentAmmo == maxAmmo)
+        {
+            return;
+        }
+        else
+        { 
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                StartCoroutine(Reload());
+            }
+        }
+    }
+
     IEnumerator Reload()
     {
         isReloading = true;
@@ -140,11 +144,11 @@ public class Weapon : MonoBehaviour {
         {
             GetComponent<AudioSource>().clip = reloadSound;
             GetComponent<AudioSource>().Play();
-            Debug.Log("Reloading Sound from IEnumarator");
+            //Debug.Log("Reloading Sound from IEnumarator");
         }
 
 
-        Debug.Log("Reloading..");
+        //Debug.Log("Reloading..");
 
         yield return new WaitForSeconds(reloadTime);
 

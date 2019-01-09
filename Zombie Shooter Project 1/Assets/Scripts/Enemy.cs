@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class EnemySpawnedEvent : UnityEvent<Transform> { }
 
 public class Enemy : MonoBehaviour {
 
-    public delegate void UpdateZHealth(int newHealth);
-    public static event UpdateZHealth OnUpdateZHealth;
+    public Slider enemyHealthBar;
 
     public EnemySpawnedEvent onSpawn;
 
@@ -21,10 +21,7 @@ public class Enemy : MonoBehaviour {
 
     public void SendZHealthData(int health)
     {
-        if(OnUpdateZHealth != null)
-        {
-            OnUpdateZHealth(health);
-        }
+        enemyHealthBar.value = health;
     }
 
 } // EnemySpawnedEvent

@@ -10,6 +10,7 @@ public class GameUI : MonoBehaviour {
     private GameObject pausePanel;
 
     public Slider healthBar;
+    public Slider zHealthBar;
     public Text scoreText, healthText, deathText, ammoText, ReloadingText;
 
     //public Transform GunImage;
@@ -26,11 +27,6 @@ public class GameUI : MonoBehaviour {
     private void Start()
     {
         Time.timeScale = 1f;
-
-       // GunImage = transform.parent.GetComponent<Weapon>().gunImage;
-
-       // GunImage.GetComponent<Image>();
-
     }
 
     private void OnEnable()
@@ -64,6 +60,8 @@ public class GameUI : MonoBehaviour {
         }
         else
         {
+            ReloadingText.enabled = true;
+            ReloadingText.text = "Press R to reload";
             ammoText.color = Color.red;
         }
     }
@@ -72,21 +70,17 @@ public class GameUI : MonoBehaviour {
     {
         if (ReloadingText == null) return;
 
-        ReloadingText.text = "RELOADING";
+        //ReloadingText.text = "RELOADING";
 
         Reloading = reloading;
 
-        if (reloading == true)
+        if (reloading)
         {
-            //if (GetComponent<AudioSource>() != null)
-            //{
-            //    GetComponent<AudioSource>().Play();
-            //}
+            ReloadingText.text = "RELOADING";
             ReloadingText.enabled = true;
         }
         else
         {
-            //Reloading = false;
             ReloadingText.enabled = false;
         }
         //Debug.Log(ReloadingText.text);
@@ -95,6 +89,11 @@ public class GameUI : MonoBehaviour {
     private void UpdateHealthBar(int health)
     {
         healthBar.value = health;
+    }
+
+    private void UpdateZHealthBar(int zHealth)
+    {
+        zHealthBar.value = zHealth;
     }
 
     private void UpdateScore(int theScore)

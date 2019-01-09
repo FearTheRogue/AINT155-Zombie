@@ -54,7 +54,6 @@ GameObject:
   - component: {fileID: 4028996832278662}
   - component: {fileID: 212084411638329470}
   - component: {fileID: 58656573744988148}
-  - component: {fileID: 114268492743076150}
   - component: {fileID: 114113653655442646}
   - component: {fileID: 114956781399477370}
   - component: {fileID: 114945391969694374}
@@ -324,7 +323,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabToSpawn: {fileID: 1581885703391738, guid: 20a44297086270548b4969fdf091f053,
     type: 2}
-  prefabBoss: {fileID: 0}
   adjustmentAngle: 0
   InfectedMaxCount: 10
   CurrentInfectedNum: 0
@@ -423,18 +421,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: OnDamagedEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!114 &114268492743076150
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1208517059132234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 238bfcd31db347545b59d59065645da7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyHealthBar: {fileID: 114705159155217224}
 --- !u!114 &114271053562563406
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -585,9 +571,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 10
+  m_MaxValue: 20
   m_WholeNumbers: 1
-  m_Value: 10
+  m_Value: 20
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -616,6 +602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af866947126eda14a9435c05da5c7fb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyHealthBar: {fileID: 114705159155217224}
   onSpawn:
     m_PersistentCalls:
       m_Calls:
@@ -656,7 +643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.062953904, g: 0.9528302, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.58984965, b: 0.9529412, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
