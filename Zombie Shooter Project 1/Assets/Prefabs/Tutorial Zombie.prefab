@@ -67,7 +67,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1532879931431184
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,6 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af866947126eda14a9435c05da5c7fb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyHealthBar: {fileID: 114553484497409416}
   onSpawn:
     m_PersistentCalls:
       m_Calls: []
@@ -549,6 +550,10 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 1581885703391738, guid: 20a44297086270548b4969fdf091f053,
     type: 2}
   adjustmentAngle: 0
+  InfectedMaxCount: 10
+  CurrentInfectedNum: 0
+  boundX: 1.2
+  boundY: 1.2
 --- !u!212 &212183538489868222
 SpriteRenderer:
   m_ObjectHideFlags: 1
