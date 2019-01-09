@@ -53,6 +53,8 @@ public class GameUI : MonoBehaviour {
 
     private void UpdateAmmoCount(int ammo)
     {
+        if (ammoText == null) return;
+
         ammoCount = ammo;
         ammoText.text = ammoCount.ToString();
 
@@ -68,6 +70,8 @@ public class GameUI : MonoBehaviour {
 
     private void UpdateReloading(bool reloading)
     {
+        if (ReloadingText == null) return;
+
         ReloadingText.text = "RELOADING";
 
         Reloading = reloading;

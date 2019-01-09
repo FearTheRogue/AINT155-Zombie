@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class CameraShake : MonoBehaviour {
 
+    public void DoShake()
+    {
+        iTween.ShakePosition(gameObject, iTween.Hash("x", 0.1f, "y", 0.1f, "time", 0.5f));
+    }
+
     //public Camera main;
 
     //public float shakeAmount = 0;

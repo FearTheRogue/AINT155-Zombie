@@ -17,16 +17,19 @@ public class Weapon : MonoBehaviour {
     public Transform MuzzleFlashPrefab;
 
     public Sprite sprite;
-    //public Sprite gunImage;
+    public Sprite gunImage;
 
     public int maxAmmo = 10;
     public int currentAmmo;
     public float reloadTime = 1f;
 
+    public AudioClip fireSound;
+    public AudioClip reloadSound;
+
     private bool isFiring = false;
     private bool isReloading = false;
 
-    private Shake shake;
+    //private Shake shake;
 
     void Start()
     {
@@ -36,7 +39,7 @@ public class Weapon : MonoBehaviour {
         //    Debug.LogError("ERROR");
         //}
 
-        shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
+        
 
         currentAmmo = maxAmmo;
     }
@@ -80,14 +83,18 @@ public class Weapon : MonoBehaviour {
             MuzzleFlash.parent = bulletSpawn[i];
             float size = Random.Range(0.6f, 0.9f);
             MuzzleFlash.localScale = new Vector3(size, size, 0);
+            MuzzleFlash.eulerAngles = new Vector3(MuzzleFlash.eulerAngles.x, MuzzleFlash.eulerAngles.y, MuzzleFlash.eulerAngles.z + 90);
+
             Destroy(MuzzleFlash.gameObject, 0.04f);
             //camShake.Shake(camShakeAmount, 0.06f);
         }
 
-        shake.CamShake();
+        GameObject.FindGameObjectWithTag("MainCamera").SendMessage("DoShake");
+        //shake.CamShake();
 
         if (GetComponent<AudioSource>() != null)
         {
+            GetComponent<AudioSource>().clip = fireSound;
             GetComponent<AudioSource>().Play();
         }
 
@@ -130,7 +137,8 @@ public class Weapon : MonoBehaviour {
         //reloading.enabled = true;
 
         if (GetComponent<AudioSource>() != null)
-        { 
+        {
+            GetComponent<AudioSource>().clip = reloadSound;
             GetComponent<AudioSource>().Play();
             Debug.Log("Reloading Sound from IEnumarator");
         }
