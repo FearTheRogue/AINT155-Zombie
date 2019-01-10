@@ -10,13 +10,7 @@ public class GameUI : MonoBehaviour {
     private GameObject pausePanel;
 
     public Slider healthBar;
-    public Slider zHealthBar;
     public Text scoreText, healthText, deathText, ammoText, ReloadingText;
-
-    //public Transform GunImage;
-
-    //public Button pauseButton;
-
     public Animator scoreAnim;
 
     public int playerScore = 0, ammoCount = 0;
@@ -91,10 +85,10 @@ public class GameUI : MonoBehaviour {
         healthBar.value = health;
     }
 
-    private void UpdateZHealthBar(int zHealth)
-    {
-        zHealthBar.value = zHealth;
-    }
+    //private void UpdateZHealthBar(int zHealth)
+    //{
+    //    zHealthBar.value = zHealth;
+    //}
 
     private void UpdateScore(int theScore)
     {   

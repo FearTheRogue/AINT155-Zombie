@@ -91,9 +91,9 @@ public class WeaponManager : MonoBehaviour
                     transform.GetChild(i).gameObject.SetActive(true);
                     spriteRenderer.sprite = transform.GetChild(i).GetComponent<Weapon>().sprite;
 
-                    if(transform.GetChild(i).GetComponent<Weapon>().gunImage != null)
+                    if (transform.GetChild(i).GetComponent<Weapon>().gunImage != null)
                         GunImage.sprite = transform.GetChild(i).GetComponent<Weapon>().gunImage;
-                   // GunImage.sprite = transform.GetChild(i).GetComponent<Weapon>().sprite;
+                        // GunImage.sprite = transform.GetChild(i).GetComponent<Weapon>().sprite;
                 }
                 else // DEACTIVATE ALL WEAPONS NOT AT INDEX
                 {
@@ -173,6 +173,10 @@ public class WeaponManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha3)) // if key 3 is pressed
         {
             ChangeWeapon(2); // change to weapon 2
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            ChangeWeapon(3);
         }
     }
 }

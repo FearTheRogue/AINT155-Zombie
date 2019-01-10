@@ -82,8 +82,11 @@ public class Pickup : MonoBehaviour
              *       this is because the TakeDamage method will remove the health, so we give it minus health to add instead!
              */
             case PickupType.Health:
-                other.transform.SendMessage("TakeDamage", -health, SendMessageOptions.DontRequireReceiver);
-                break;
+               // if (health <= 100)
+               // {
+                    other.transform.SendMessage("TakeDamage", -health, SendMessageOptions.DontRequireReceiver);
+                //}
+                    break;
 
             /*
              * DAMAGE INCREASE
