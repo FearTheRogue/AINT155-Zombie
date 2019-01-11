@@ -59,6 +59,8 @@ public class Pickup : MonoBehaviour
     public int health = 10;
     //public Sprite pickup;
 
+    public AudioSource pickUP;
+
     /*
      * OnTriggerEnter2D
      * see link: https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnTriggerEnter2D.html
@@ -82,7 +84,9 @@ public class Pickup : MonoBehaviour
              *       this is because the TakeDamage method will remove the health, so we give it minus health to add instead!
              */
             case PickupType.Health:
-                    other.transform.SendMessage("TakeDamage", -health, SendMessageOptions.DontRequireReceiver);
+                pickUP.Play();
+                other.transform.SendMessage("TakeDamage", -health, SendMessageOptions.DontRequireReceiver);
+                
                     break;
 
             /*

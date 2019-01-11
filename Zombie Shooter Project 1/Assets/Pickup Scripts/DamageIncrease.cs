@@ -39,6 +39,8 @@ public class DamageIncrease : MonoBehaviour
      */
     private float time = 10;
     //private float NewfireTime = 0.1f;
+    public AudioSource pickUp;
+
 
     //public Sprite damage;
 
@@ -93,7 +95,9 @@ public class DamageIncrease : MonoBehaviour
          * TimeOut will swap the high damage bullet for the original bullet
          */
         // damage = transform.GetComponent<GameUI>().Damage;
-       // damage.sprite = transform.GetComponent<Pickup>().pickup;
+        // damage.sprite = transform.GetComponent<Pickup>().pickup;
+
+        pickUp.Play();
 
         Invoke("TimeOut", time);
     }
