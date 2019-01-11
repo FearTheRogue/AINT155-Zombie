@@ -93,6 +93,7 @@ public class WeaponManager : MonoBehaviour
 
                     if (transform.GetChild(i).GetComponent<Weapon>().gunImage != null)
                         GunImage.sprite = transform.GetChild(i).GetComponent<Weapon>().gunImage;
+
                         // GunImage.sprite = transform.GetChild(i).GetComponent<Weapon>().sprite;
                 }
                 else // DEACTIVATE ALL WEAPONS NOT AT INDEX

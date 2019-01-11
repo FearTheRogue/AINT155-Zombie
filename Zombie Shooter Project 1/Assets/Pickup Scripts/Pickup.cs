@@ -22,7 +22,7 @@
  **********************************************************/
 
 using UnityEngine;
-
+using UnityEngine.UI;
 
 /*
  * PickupType
@@ -57,7 +57,7 @@ public class Pickup : MonoBehaviour
      * the value is the amount of health to add to the player HealthSystem
      */ 
     public int health = 10;
-
+    public Sprite pickup;
 
     /*
      * OnTriggerEnter2D
@@ -82,10 +82,7 @@ public class Pickup : MonoBehaviour
              *       this is because the TakeDamage method will remove the health, so we give it minus health to add instead!
              */
             case PickupType.Health:
-               // if (health <= 100)
-               // {
                     other.transform.SendMessage("TakeDamage", -health, SendMessageOptions.DontRequireReceiver);
-                //}
                     break;
 
             /*

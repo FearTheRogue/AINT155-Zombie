@@ -29,6 +29,7 @@
  * 
  **********************************************************/
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DamageIncrease : MonoBehaviour
 {
@@ -38,6 +39,8 @@ public class DamageIncrease : MonoBehaviour
      */
     private float time = 10;
     //private float NewfireTime = 0.1f;
+
+    public SpriteRenderer damage;
 
     /*
      * oldPrefab
@@ -55,6 +58,11 @@ public class DamageIncrease : MonoBehaviour
      * lastly, we use the Invoke method for a timer to call the "TimeOut" method on this class
      * see link: https://docs.unity3d.com/ScriptReference/MonoBehaviour.Invoke.html
      */
+
+        void Awake()
+    {
+        damage = transform.parent.GetComponent<SpriteRenderer>();           
+    }
     void Start()
     {
         /*
@@ -82,7 +90,10 @@ public class DamageIncrease : MonoBehaviour
          * SET A TIMER TO SWAP BULLETS BACK AGAIN
          * set an Invoke timer to call the "TimeOut" method
          * TimeOut will swap the high damage bullet for the original bullet
-         */ 
+         */
+         damage.sprite = transform.GetComponent<GameUI>().Damage;
+       // damage.sprite = transform.GetComponent<Pickup>().pickup;
+
         Invoke("TimeOut", time);
     }
 

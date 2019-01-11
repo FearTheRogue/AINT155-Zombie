@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
-    //public GameObject tutorialcomp;
-
     public void StartGame()
     {
         SceneManager.LoadScene("Zombie Shooter Level 1");
@@ -35,7 +33,6 @@ public class GameManager : MonoBehaviour {
     
     public void tutorialComp()
     {
-        //tutorialcomp = transform.GetComponents<Collider2D>();
         SceneManager.LoadScene("Zombie Shoot Level 1");
     }
 

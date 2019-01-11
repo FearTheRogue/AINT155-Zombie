@@ -43,6 +43,7 @@ public class Dialogue : MonoBehaviour
         //playerMovement = GameObject.Find("player").GetComponent<TopDownCharacterController2D>();
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<TopDownCharacterController2D>();
 
+
     }
 
     void Update()
@@ -55,7 +56,7 @@ public class Dialogue : MonoBehaviour
 
         Time.timeScale = 1f; 
         Spawns();
-
+        //SkipButton();
         //IdleRigidbody2D.velocity = Vector2.zero;
 
         //playerMovement = GameObject.Find("player").GetComponent<TopDownCharacterController2D>();
@@ -89,6 +90,19 @@ public class Dialogue : MonoBehaviour
             DialogueText.text = "";
             continuebutton.SetActive(false);
         }
+    }
+
+    public void SkipButton()
+    {
+        if (index == 0 || index == 1 || index == 2 || index == 3 || index == 4 || index == 5 || index == 6 || index == 7)
+        {
+            index = 8;
+        } else if (index == 9 || index == 10 || index == 11 || index == 12)
+        {
+            index = 13;
+        }
+            // Finish this!!!
+        StartCoroutine(Type());
     }
 
     public void Spawns()

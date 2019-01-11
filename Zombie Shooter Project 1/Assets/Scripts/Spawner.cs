@@ -12,9 +12,6 @@ public class Spawner : MonoBehaviour {
     public int InfectedMaxCount = 10;
     public int CurrentInfectedNum = 0;
 
-    public float boundX = 1.2f;
-    public float boundY = 1.2f;
-
     public void Spawn()
     {
         Vector3 rotationInDegrees = transform.eulerAngles;

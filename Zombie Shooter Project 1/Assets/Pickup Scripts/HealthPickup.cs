@@ -49,8 +49,6 @@ public class HealthPickup : MonoBehaviour
          *       this is because the TakeDamage method will remove the health, so we give it minus health to add instead!
          */
         other.transform.SendMessage("TakeDamage", -health, SendMessageOptions.DontRequireReceiver);
-     
-
 
         /*
          * DESTROY THE PICKUP GAMEOBJECT

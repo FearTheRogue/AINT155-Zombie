@@ -13,6 +13,8 @@ public class GameUI : MonoBehaviour {
     public Text scoreText, healthText, deathText, ammoText, ReloadingText;
     public Animator scoreAnim;
 
+    public Sprite fireRate, Damage, Invinciblity, Stamina;
+
     public int playerScore = 0, ammoCount = 0;
     public int killCounter = 1;
 
