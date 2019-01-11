@@ -57,7 +57,7 @@ public class Pickup : MonoBehaviour
      * the value is the amount of health to add to the player HealthSystem
      */ 
     public int health = 10;
-    public Sprite pickup;
+    //public Sprite pickup;
 
     /*
      * OnTriggerEnter2D
@@ -92,6 +92,7 @@ public class Pickup : MonoBehaviour
              */ 
             case PickupType.Damage:
                 other.gameObject.AddComponent<DamageIncrease>();
+                //other.gameObject.GetComponent<GameUI>();
                 break;
 
             /*

@@ -40,7 +40,7 @@ public class DamageIncrease : MonoBehaviour
     private float time = 10;
     //private float NewfireTime = 0.1f;
 
-    public SpriteRenderer damage;
+    //public Sprite damage;
 
     /*
      * oldPrefab
@@ -59,10 +59,11 @@ public class DamageIncrease : MonoBehaviour
      * see link: https://docs.unity3d.com/ScriptReference/MonoBehaviour.Invoke.html
      */
 
-        void Awake()
-    {
-        damage = transform.parent.GetComponent<SpriteRenderer>();           
-    }
+    //void update()
+    //{
+    //    if (transform.parent.GetComponent<SpriteRenderer>() != null)
+    //        damage = transform.parent.GetComponent<SpriteRenderer>().sprite;
+    //}
     void Start()
     {
         /*
@@ -91,7 +92,7 @@ public class DamageIncrease : MonoBehaviour
          * set an Invoke timer to call the "TimeOut" method
          * TimeOut will swap the high damage bullet for the original bullet
          */
-         damage.sprite = transform.GetComponent<GameUI>().Damage;
+        // damage = transform.GetComponent<GameUI>().Damage;
        // damage.sprite = transform.GetComponent<Pickup>().pickup;
 
         Invoke("TimeOut", time);
