@@ -19,11 +19,13 @@ public class HealthSystem : MonoBehaviour {
 
         OnDamaged.Invoke(health);
 
-        print(health);
+        //print(health);
 
         if (health < 1)
         {
             onDie.Invoke();
+            //SendMessage("Dead", SendMessageOptions.DontRequireReceiver);
         }
     }
+
 } // HealthSystem

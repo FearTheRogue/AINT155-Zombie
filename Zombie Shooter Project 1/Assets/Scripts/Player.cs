@@ -11,6 +11,8 @@ public class Player : MonoBehaviour {
     {
         if (OnUpdateHealth != null) 
         {
+            //OnUpdateHealth(PlayerPrefs.GetInt("playerCurrentLife", health));
+            
             OnUpdateHealth(health);
         }
     }

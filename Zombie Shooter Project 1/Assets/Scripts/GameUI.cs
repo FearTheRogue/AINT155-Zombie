@@ -10,7 +10,7 @@ public class GameUI : MonoBehaviour {
     private GameObject pausePanel;
 
     public Slider healthBar;
-    public Text scoreText, healthText, deathText, ammoText, ReloadingText;
+    public Text scoreText, healthText, deathText, ammoText, ReloadingText, healthRemainingText;
     public Animator scoreAnim;
 
     public Sprite fireRate, Damage, Invinciblity, Stamina;
@@ -85,6 +85,15 @@ public class GameUI : MonoBehaviour {
     private void UpdateHealthBar(int health)
     {
         healthBar.value = health;
+        PlayerPrefs.GetInt("playerCurrentLife", health);
+
+        if (healthRemainingText.text != null)
+        healthRemainingText.text = healthBar.value + " / 50";
+    }
+
+    public void UpdateAll()
+    {
+        healthBar.value = healthBar.value;
     }
 
     //private void UpdateZHealthBar(int zHealth)

@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test Tutorial Level (Dialogue Change).unity
     guid: b392b4d84b00af0419cb313459b6d599
+  - enabled: 1
+    path: Assets/Scenes/Zombie Shooter Level 2.unity
+    guid: 3ecf33fd52e08494795f133fb6d190d7
   m_configObjects: {}

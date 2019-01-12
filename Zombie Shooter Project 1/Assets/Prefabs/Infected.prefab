@@ -620,10 +620,9 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 1581885703391738, guid: 20a44297086270548b4969fdf091f053,
     type: 2}
   adjustmentAngle: 0
+  updatenum: 0
   InfectedMaxCount: 10
   CurrentInfectedNum: 0
-  boundX: 1.2
-  boundY: 1.2
 --- !u!114 &114737268961404336
 MonoBehaviour:
   m_ObjectHideFlags: 1

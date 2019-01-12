@@ -485,7 +485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupType: 0
-  health: 50
+  health: 25
 --- !u!4 &398701804
 Transform:
   m_ObjectHideFlags: 0
@@ -34569,9 +34569,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 50
   m_WholeNumbers: 1
-  m_Value: 50
+  m_Value: 25
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -34749,7 +34749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d88a2f3e13b719c43a1545f2a0db99fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 25
   onDie:
     m_PersistentCalls:
       m_Calls:
@@ -35162,7 +35162,12 @@ MonoBehaviour:
   deathText: {fileID: 0}
   ammoText: {fileID: 0}
   ReloadingText: {fileID: 0}
+  healthRemainingText: {fileID: 0}
   scoreAnim: {fileID: 0}
+  fireRate: {fileID: 0}
+  Damage: {fileID: 0}
+  Invinciblity: {fileID: 0}
+  Stamina: {fileID: 0}
   playerScore: 0
   ammoCount: 0
   killCounter: 1
