@@ -620,7 +620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &436124579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -947,6 +947,16 @@ Prefab:
       propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1149159184}
+    - target: {fileID: 114944002751360848, guid: f97b938dc0b4a0341874cd72e671d76a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114109445349651460, guid: f97b938dc0b4a0341874cd72e671d76a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f97b938dc0b4a0341874cd72e671d76a, type: 2}
   m_IsPrefabParent: 0
@@ -976,7 +986,7 @@ RectTransform:
   m_GameObject: {fileID: 575204503}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 892515717}
   m_Father: {fileID: 1533478348}
@@ -1006,7 +1016,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e97627444b90b1947a72d500d577fe3e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cb79b8e1b1b35d740b001253772daa44, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -16786,7 +16796,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 811.6, y: -303}
+  m_AnchoredPosition: {x: 805, y: -268}
   m_SizeDelta: {x: 244.2, y: 84.87}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &862851869
@@ -22080,6 +22090,7 @@ MonoBehaviour:
   gateFX: {fileID: 1303037469}
   dialogueBox: {fileID: 575204503}
   continuebutton: {fileID: 862851867}
+  skipbutton: {fileID: 1817942871}
   pistolPickup: {fileID: 436124578}
   Infected: {fileID: 117491503}
   gate: {fileID: 2105223849}
@@ -33837,7 +33848,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 811.59985, y: -392.9}
+  m_AnchoredPosition: {x: 804.9999, y: -357.9}
   m_SizeDelta: {x: 244.2, y: 83.89}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1817942873
@@ -34752,18 +34763,7 @@ MonoBehaviour:
   health: 25
   onDie:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2065351081}
-        m_MethodName: EndGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   OnDamaged:
@@ -35137,6 +35137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2138672317}
   - component: {fileID: 2138672316}
+  - component: {fileID: 2138672318}
   m_Layer: 0
   m_Name: Gameplay Controller
   m_TagString: Untagged
@@ -35168,6 +35169,7 @@ MonoBehaviour:
   Damage: {fileID: 0}
   Invinciblity: {fileID: 0}
   Stamina: {fileID: 0}
+  bg_sound: {fileID: 2138672318}
   playerScore: 0
   ammoCount: 0
   killCounter: 1
@@ -35185,3 +35187,98 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &2138672318
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2138672315}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: eae8f7ab399c9de41a785eee3d381f77, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.182
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 383.41016
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

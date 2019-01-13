@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour {
 
     private void OnDestroy()
     {
-        if(drop != null)
+        if(GetComponent<Enemy>().drop != null)
         Instantiate(drop[Random.Range(0, drop.Count - 1)], transform.position, Quaternion.identity);
     }
 

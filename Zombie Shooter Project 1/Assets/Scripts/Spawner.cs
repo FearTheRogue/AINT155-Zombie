@@ -29,9 +29,9 @@ public class Spawner : MonoBehaviour {
 
             SendCurrentEnemyNum(CurrentInfectedNum);
             print(CurrentInfectedNum + " has spawned");
-
+            CurrentInfectedNum++;
         }
-        CurrentInfectedNum++;
+       
     }
 
     public void Dead()

@@ -95,10 +95,10 @@ public class GameUI : MonoBehaviour {
         healthRemainingText.text = healthBar.value + " / 50";
     }
 
-    public void UpdateAll()
-    {
-        healthBar.value = healthBar.value;
-    }
+    //public void UpdateAll()
+    //{
+    //    healthBar.value = healthBar.value;
+    //}
 
     //private void UpdateZHealthBar(int zHealth)
     //{

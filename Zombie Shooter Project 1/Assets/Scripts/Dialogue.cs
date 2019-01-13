@@ -17,7 +17,7 @@ public class Dialogue : MonoBehaviour
     public ParticleSystem gateFX;
     public GameObject dialogueBox;
 
-    public GameObject continuebutton;
+    public GameObject continuebutton, skipbutton;
     public GameObject pistolPickup;
     public GameObject Infected;
     public GameObject gate;
@@ -27,6 +27,7 @@ public class Dialogue : MonoBehaviour
 
     public void Awake()
     {
+        skipbutton.SetActive(false);
         continuebutton.SetActive(false);
         dialogueBox.SetActive(false);
         Invoke("StartConvo", 2);
@@ -36,14 +37,11 @@ public class Dialogue : MonoBehaviour
     {
         //FadeIn.enabled = true;
         continuebutton.SetActive(false);
+        skipbutton.SetActive(true);
         dialogueBox.SetActive(true);
         StartCoroutine(Type());
-        //playerMovement = GameObject.Find("Player").GetComponent<TopDownCharacterController2D>();
-        //playerMovement = GetComponent<TopDownCharacterController2D>();
-        //playerMovement = GameObject.Find("player").GetComponent<TopDownCharacterController2D>();
+
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<TopDownCharacterController2D>();
-
-
     }
 
     void Update()
@@ -78,6 +76,7 @@ public class Dialogue : MonoBehaviour
     public void NextSentence()
     {
         continuebutton.SetActive(false);
+        skipbutton.SetActive(true);
 
         if (index < sentences.Length - 1)
         {
@@ -107,10 +106,10 @@ public class Dialogue : MonoBehaviour
 
     public void Spawns()
     {
-
         if(index == 8)
         {
             playerMovement.speed = 5f;
+            skipbutton.SetActive(false);
         }
         if (index == 9)
         {
@@ -119,15 +118,22 @@ public class Dialogue : MonoBehaviour
             Time.timeScale = 1f;
             pistolPickup.SetActive(true);
             continuebutton.SetActive(false);
+            skipbutton.SetActive(false);
         }
         else if (index == 13)
         {
             Infected.SetActive(true);
             continuebutton.SetActive(true);
+            skipbutton.SetActive(false);
+        }
+        else if(index == 14)
+        {
+            skipbutton.SetActive(false); 
         }
         else if (index == 15)
         {
             playerMovement.speed = 5f;
+            skipbutton.SetActive(false);
             zHealthBar.SetActive(true);
             continuebutton.SetActive(false);
         }

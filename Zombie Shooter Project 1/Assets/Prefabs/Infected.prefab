@@ -158,6 +158,7 @@ GameObject:
   - component: {fileID: 114665200688506098}
   - component: {fileID: 114512370529700286}
   - component: {fileID: 114737268961404336}
+  - component: {fileID: 114535387545035732}
   - component: {fileID: 114225658211766752}
   - component: {fileID: 114736253668223738}
   - component: {fileID: 114594117799026400}
@@ -452,6 +453,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 10
+--- !u!114 &114535387545035732
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1788899205763108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a333f97ec8ae23478bcc3ed0bd41d54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabToSpawn: {fileID: 4847194209427744, guid: 9fc8f1476f416134f88e0b24d8419e07,
+    type: 2}
 --- !u!114 &114594117799026400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -583,6 +597,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 114535387545035732}
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: OnDamagedEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!114 &114700517604552100
@@ -651,6 +676,9 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: EnemySpawnedEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  audioSource: {fileID: 0}
+  InfectedSpawn: {fileID: 0}
+  drop: []
 --- !u!114 &114741471811841184
 MonoBehaviour:
   m_ObjectHideFlags: 1
