@@ -16,6 +16,7 @@ public class HighScoreUI : MonoBehaviour
     public void Start()
     {
         int score = PlayerPrefs.GetInt("Score");
+        int kill = PlayerPrefs.GetInt("KillCounter");
         string s = PlayerPrefs.GetString("HighScores");
         if (string.IsNullOrEmpty(s))
         {
@@ -50,10 +51,11 @@ public class HighScoreUI : MonoBehaviour
             }
             else
             {
-                highScoreText.text += (i + 1).ToString() + ". " + highScore.scores[i].ToString() + "\n";
+                highScoreText.text += (i + 1).ToString() + ". " + highScore.scores[i].ToString() + /*" " + (kill - 1).ToString() +*/ "\n";
             }
         }
         string scoresJSON = JsonUtility.ToJson(highScore);
         PlayerPrefs.SetString("HighScores", scoresJSON);
     }
-}
+}
+

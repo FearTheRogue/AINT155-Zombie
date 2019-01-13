@@ -181,7 +181,7 @@ MonoBehaviour:
   bulletSpawn:
   - {fileID: 4544922681372382}
   fireTime: 0.3
-  MuzzleFlashPrefab: {fileID: 4559752483121844, guid: a6efaf2fc639f894e81fa91df8240ba8,
+  MuzzleFlashPrefab: {fileID: 4962192564134492, guid: a6efaf2fc639f894e81fa91df8240ba8,
     type: 2}
   sprite: {fileID: 21300004, guid: 24b8eafa64a0136469639f6940cf4d4d, type: 3}
   gunImage: {fileID: 21300000, guid: ed4f05070a153334ca0729239f04a98e, type: 3}
