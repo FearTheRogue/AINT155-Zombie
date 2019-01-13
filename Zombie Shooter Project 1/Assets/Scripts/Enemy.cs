@@ -13,15 +13,32 @@ public class Enemy : MonoBehaviour {
 
     public EnemySpawnedEvent onSpawn;
 
+    public AudioSource audioSource;
+    public AudioClip InfectedSpawn;
+
+    public List<Transform> drop = new List<Transform>(); 
+
     // Use this for initialization
     private void Start() {
         GameObject player = GameObject.FindWithTag("Player");
         onSpawn.Invoke(player.transform);
+
+        if(GetComponent<AudioSource>() != null)
+        {
+            GetComponent<AudioSource>().clip = InfectedSpawn;
+            GetComponent<AudioSource>().Play();
+        }
 	}
 
     public void SendZHealthData(int health)
     {
         enemyHealthBar.value = health;
+    }
+
+    private void OnDestroy()
+    {
+        if(drop != null)
+        Instantiate(drop[Random.Range(0, drop.Count - 1)], transform.position, Quaternion.identity);
     }
 
 } // EnemySpawnedEvent

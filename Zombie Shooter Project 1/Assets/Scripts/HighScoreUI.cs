@@ -16,7 +16,7 @@ public class HighScoreUI : MonoBehaviour
     public void Start()
     {
         int score = PlayerPrefs.GetInt("Score");
-        int kill = PlayerPrefs.GetInt("KillCounter");
+        //int kill = PlayerPrefs.GetInt("KillCounter");
         string s = PlayerPrefs.GetString("HighScores");
         if (string.IsNullOrEmpty(s))
         {

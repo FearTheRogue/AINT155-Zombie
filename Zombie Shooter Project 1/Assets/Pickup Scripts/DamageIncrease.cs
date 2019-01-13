@@ -66,6 +66,13 @@ public class DamageIncrease : MonoBehaviour
     //    if (transform.parent.GetComponent<SpriteRenderer>() != null)
     //        damage = transform.parent.GetComponent<SpriteRenderer>().sprite;
     //}
+
+    void update()
+    {
+
+        Invoke("TimeOut", time);
+    }
+
     void Start()
     {
         /*
@@ -127,6 +134,11 @@ public class DamageIncrease : MonoBehaviour
          * here we remove this component (DamageIncrease) from the player GameObject
          * NOTE: we use "this" in the Destroy method to destroy "this" component (DamageIncrease)
          */
+        Destroy(this);
+    }
+
+    public void ForceTimeout()
+    {
         Destroy(this);
     }
 }

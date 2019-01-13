@@ -9,11 +9,13 @@ public class GameUI : MonoBehaviour {
     [SerializeField]
     private GameObject pausePanel;
 
-    public Slider healthBar, InfectedHealthBar;
+    public Slider healthBar;
     public Text scoreText, healthText, deathText, ammoText, ReloadingText, healthRemainingText;
     public Animator scoreAnim;
 
     public Sprite fireRate, Damage, Invinciblity, Stamina;
+
+    public AudioSource bg_sound;
 
     public int playerScore = 0, ammoCount = 0;
     public int killCounter = 0;
@@ -23,6 +25,7 @@ public class GameUI : MonoBehaviour {
     private void Start()
     {
         Time.timeScale = 1f;
+        bg_sound.Play();
     }
 
     private void OnEnable()
