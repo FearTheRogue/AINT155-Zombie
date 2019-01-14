@@ -27,6 +27,7 @@ public class Dialogue : MonoBehaviour
 
     public void Awake()
     {
+        if(skipbutton != null)
         skipbutton.SetActive(false);
         continuebutton.SetActive(false);
         dialogueBox.SetActive(false);
@@ -37,7 +38,8 @@ public class Dialogue : MonoBehaviour
     {
         //FadeIn.enabled = true;
         continuebutton.SetActive(false);
-        skipbutton.SetActive(true);
+        if (skipbutton != null)
+            skipbutton.SetActive(true);
         dialogueBox.SetActive(true);
         StartCoroutine(Type());
 

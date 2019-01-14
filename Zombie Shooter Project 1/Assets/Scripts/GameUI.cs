@@ -89,9 +89,9 @@ public class GameUI : MonoBehaviour {
     private void UpdateHealthBar(int health)
     {
         healthBar.value = health;
-        PlayerPrefs.GetInt("playerCurrentLife", health);
+        //PlayerPrefs.GetInt("playerCurrentLife", health);
 
-        if (healthRemainingText.text != null)
+        if (healthRemainingText != null)
         healthRemainingText.text = healthBar.value + " / 50";
     }
 
