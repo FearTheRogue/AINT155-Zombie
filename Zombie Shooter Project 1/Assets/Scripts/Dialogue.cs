@@ -95,14 +95,21 @@ public class Dialogue : MonoBehaviour
 
     public void SkipButton()
     {
+        continuebutton.SetActive(false);
         if (index == 0 || index == 1 || index == 2 || index == 3 || index == 4 || index == 5 || index == 6 || index == 7)
         {
             index = 8;
+            continuebutton.SetActive(false);
         } else if (index == 9 || index == 10 || index == 11 || index == 12)
         {
             index = 13;
+            continuebutton.SetActive(false);
+        } else if (index == 19 || index == 20 || index == 21) 
+        {
+            index = 22;
+            continuebutton.SetActive(false);
         }
-            // Finish this!!!
+            
         StartCoroutine(Type());
     }
 
@@ -139,10 +146,15 @@ public class Dialogue : MonoBehaviour
             zHealthBar.SetActive(true);
             continuebutton.SetActive(false);
         }
+        else if (index == 16)
+        {
+            skipbutton.SetActive(false);
+        }
         else if(index == 17)
         {
             Time.timeScale = 1f;
             healthBar.SetActive(true);
+            skipbutton.SetActive(false);
             //continuebutton.SetActive(false);
         }
         else if (index == 18)
@@ -150,6 +162,7 @@ public class Dialogue : MonoBehaviour
             playerMovement.speed = 5f;
 
             Time.timeScale = 1f;
+            skipbutton.SetActive(false);
             pickUp.SetActive(true);
             continuebutton.SetActive(false);
         }
@@ -157,11 +170,17 @@ public class Dialogue : MonoBehaviour
         {
             gateFX.Play();
             continuebutton.SetActive(false);
+            skipbutton.SetActive(false);
+        }
+        else if(index == 23)
+        {
+            skipbutton.SetActive(false);
         }
         else if (index == 24)
         {
             playerMovement.speed = 5f;
             dialogueBox.SetActive(false);
+            skipbutton.SetActive(false);
             continuebutton.SetActive(false);
         }
     }

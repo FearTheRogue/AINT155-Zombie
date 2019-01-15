@@ -24,6 +24,7 @@ public class GameUI : MonoBehaviour {
 
     public void Update()
     {
+        if(spawnersDestroyedText != null)
         spawnersDestroyedText.text = "SPAWNERS DESTROYED: " + spawnCount + " / " + maxSpawners;
     }
 
