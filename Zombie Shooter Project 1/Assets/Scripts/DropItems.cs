@@ -4,6 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DropItems : MonoBehaviour {
+    
+    void Start()
+    {
+        
+    }
 
     //public List<Transform> drop = new List<Transform>();
 

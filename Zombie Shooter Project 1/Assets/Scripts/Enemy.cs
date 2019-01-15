@@ -35,8 +35,10 @@ public class Enemy : MonoBehaviour {
         enemyHealthBar.value = health;
     }
 
-    private void OnDestroy()
+    private void OnDrop()
     {
+
+
         if(drop != null)
         Instantiate(drop[Random.Range(0, drop.Count - 1)], transform.position, Quaternion.identity);
     }
