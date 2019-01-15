@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 114207077018140072}
   - component: {fileID: 114392727778821396}
   - component: {fileID: 114692968464647264}
+  - component: {fileID: 114487187594828456}
   - component: {fileID: 114145915783530606}
   - component: {fileID: 114466908974480402}
   - component: {fileID: 114716058395386148}
@@ -729,8 +730,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 114692968464647264}
-        m_MethodName: OnDeath
+      - m_Target: {fileID: 114487187594828456}
+        m_MethodName: calculateLoot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -879,6 +880,34 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!114 &114487187594828456
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1271765188397884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e2c2ca5fc43c442807e5b01a67a09e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loot:
+  - name: Damage
+    pickUps: {fileID: 1249505807759912, guid: d73e50ed81c21fc41a5ce7f450180a18, type: 2}
+    dropRarity: 40
+  - name: Health
+    pickUps: {fileID: 1139476190502270, guid: 9af64415068a3d2478db1222837a6723, type: 2}
+    dropRarity: 20
+  - name: Speed
+    pickUps: {fileID: 1282452912684990, guid: 5f302670a6bc97c4ab95e443250005e2, type: 2}
+    dropRarity: 60
+  - name: FireRate
+    pickUps: {fileID: 1262275663214168, guid: b94df14da2165654bbeeadb1ac8d6acc, type: 2}
+    dropRarity: 35
+  - name: Inv
+    pickUps: {fileID: 1772931943206182, guid: 064da458162db4a4188a4029afb1c1ec, type: 2}
+    dropRarity: 10
+  dropChance: 50
 --- !u!114 &114580808155897404
 MonoBehaviour:
   m_ObjectHideFlags: 1

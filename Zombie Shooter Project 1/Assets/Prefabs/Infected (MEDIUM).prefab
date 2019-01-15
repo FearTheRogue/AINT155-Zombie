@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 114985569143357094}
   - component: {fileID: 114158806711125176}
   - component: {fileID: 114326356867554312}
+  - component: {fileID: 114978499844415792}
   - component: {fileID: 114473343297413808}
   - component: {fileID: 82533910257440016}
   - component: {fileID: 114775064025468480}
@@ -503,6 +504,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 114978499844415792}
+        m_MethodName: calculateLoot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   OnDamaged:
@@ -595,13 +607,7 @@ MonoBehaviour:
     m_TypeName: EnemySpawnedEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   audioSource: {fileID: 82533910257440016}
-  InfectedSpawn: {fileID: 8300000, guid: 5e117e3581ff5214cac160ade60c8f32, type: 3}
-  drop:
-  - {fileID: 4048971550646830, guid: d73e50ed81c21fc41a5ce7f450180a18, type: 2}
-  - {fileID: 4607960442941788, guid: b94df14da2165654bbeeadb1ac8d6acc, type: 2}
-  - {fileID: 4128001677389808, guid: 9af64415068a3d2478db1222837a6723, type: 2}
-  - {fileID: 4444155125087422, guid: 5f302670a6bc97c4ab95e443250005e2, type: 2}
-  - {fileID: 4329956993678866, guid: 064da458162db4a4188a4029afb1c1ec, type: 2}
+  InfectedSpawn: {fileID: 8300000, guid: 85ce26b03cfb51b4c85de01ab76f2c26, type: 3}
 --- !u!114 &114473343297413808
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -812,7 +818,7 @@ MonoBehaviour:
   repathRate: 1
   canSearch: 1
   canMove: 1
-  speed: 3
+  speed: 4.5
   orientation: 1
   enableRotation: 1
   rotationSpeed: 5
@@ -852,6 +858,34 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: MEDIUM
+--- !u!114 &114978499844415792
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1544953933008342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e2c2ca5fc43c442807e5b01a67a09e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loot:
+  - name: Damage
+    pickUps: {fileID: 1249505807759912, guid: d73e50ed81c21fc41a5ce7f450180a18, type: 2}
+    dropRarity: 40
+  - name: Health
+    pickUps: {fileID: 1139476190502270, guid: 9af64415068a3d2478db1222837a6723, type: 2}
+    dropRarity: 20
+  - name: Speed
+    pickUps: {fileID: 1282452912684990, guid: 5f302670a6bc97c4ab95e443250005e2, type: 2}
+    dropRarity: 60
+  - name: FireRate
+    pickUps: {fileID: 1262275663214168, guid: b94df14da2165654bbeeadb1ac8d6acc, type: 2}
+    dropRarity: 35
+  - name: Inv
+    pickUps: {fileID: 1772931943206182, guid: 064da458162db4a4188a4029afb1c1ec, type: 2}
+    dropRarity: 10
+  dropChance: 50
 --- !u!114 &114984367120964118
 MonoBehaviour:
   m_ObjectHideFlags: 1

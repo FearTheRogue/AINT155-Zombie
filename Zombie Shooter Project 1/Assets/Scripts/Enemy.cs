@@ -16,8 +16,6 @@ public class Enemy : MonoBehaviour {
     public AudioSource audioSource;
     public AudioClip InfectedSpawn;
 
-    public List<Transform> drop = new List<Transform>(); 
-
     // Use this for initialization
     private void Start() {
         GameObject player = GameObject.FindWithTag("Player");
@@ -34,13 +32,4 @@ public class Enemy : MonoBehaviour {
     {
         enemyHealthBar.value = health;
     }
-
-    private void OnDrop()
-    {
-
-
-        if(drop != null)
-        Instantiate(drop[Random.Range(0, drop.Count - 1)], transform.position, Quaternion.identity);
-    }
-
 } // EnemySpawnedEvent
