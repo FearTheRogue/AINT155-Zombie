@@ -22692,7 +22692,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 4.85
+      scalar: 3.7
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -35389,6 +35389,7 @@ MonoBehaviour:
   ammoText: {fileID: 0}
   ReloadingText: {fileID: 0}
   healthRemainingText: {fileID: 0}
+  spawnersDestroyedText: {fileID: 0}
   scoreAnim: {fileID: 0}
   fireRate: {fileID: 0}
   Damage: {fileID: 0}
@@ -35397,6 +35398,8 @@ MonoBehaviour:
   bg_sound: {fileID: 2138672318}
   playerScore: 0
   ammoCount: 0
+  spawnCount: 0
+  maxSpawners: 2
   killCounter: 1
   Reloading: 0
 --- !u!4 &2138672317

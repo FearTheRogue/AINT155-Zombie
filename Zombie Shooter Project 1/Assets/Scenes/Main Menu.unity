@@ -650,6 +650,7 @@ MonoBehaviour:
   ammoText: {fileID: 0}
   ReloadingText: {fileID: 0}
   healthRemainingText: {fileID: 0}
+  spawnersDestroyedText: {fileID: 0}
   scoreAnim: {fileID: 0}
   fireRate: {fileID: 0}
   Damage: {fileID: 0}
@@ -658,6 +659,8 @@ MonoBehaviour:
   bg_sound: {fileID: 377928605}
   playerScore: 0
   ammoCount: 0
+  spawnCount: 0
+  maxSpawners: 2
   killCounter: 0
   Reloading: 0
 --- !u!1 &379530141
@@ -783,9 +786,9 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 113f0df8f01429b42a281f3976747967, type: 3}
+    m_Font: {fileID: 12800000, guid: d37a4929e806868438a1e88034632f22, type: 3}
     m_FontSize: 94
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 94
@@ -795,7 +798,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0
-  m_Text: Tutorial
+  m_Text: TUTORIAL
 --- !u!222 &470598726
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24326,9 +24329,9 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 113f0df8f01429b42a281f3976747967, type: 3}
+    m_Font: {fileID: 12800000, guid: d37a4929e806868438a1e88034632f22, type: 3}
     m_FontSize: 94
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 94
@@ -24338,7 +24341,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0
-  m_Text: Exit
+  m_Text: EXIT
 --- !u!222 &1342888025
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -34269,9 +34272,9 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 113f0df8f01429b42a281f3976747967, type: 3}
+    m_Font: {fileID: 12800000, guid: d37a4929e806868438a1e88034632f22, type: 3}
     m_FontSize: 94
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 94
