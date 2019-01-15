@@ -27,5 +27,4 @@ public class HealthSystem : MonoBehaviour {
             //SendMessage("Dead", SendMessageOptions.DontRequireReceiver);
         }
     }
-
 } // HealthSystem

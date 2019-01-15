@@ -10,22 +10,28 @@ public class GameUI : MonoBehaviour {
     private GameObject pausePanel;
 
     public Slider healthBar;
-    public Text scoreText, healthText, deathText, ammoText, ReloadingText, healthRemainingText;
+    public Text scoreText, healthText, deathText, ammoText, ReloadingText, healthRemainingText, spawnersDestroyedText;
     public Animator scoreAnim;
 
     public Sprite fireRate, Damage, Invinciblity, Stamina;
 
     public AudioSource bg_sound;
 
-    public int playerScore = 0, ammoCount = 0;
+    public int playerScore = 0, ammoCount = 0, spawnCount = 0, maxSpawners = 2;
     public int killCounter = 0;
 
     public bool Reloading = false;
+
+    public void Update()
+    {
+        spawnersDestroyedText.text = "SPAWNERS DESTROYED: " + spawnCount + " / " + maxSpawners;
+    }
 
     private void Start()
     {
         Time.timeScale = 1f;
         bg_sound.Play();
+        
     }
 
     private void OnEnable()
@@ -34,6 +40,7 @@ public class GameUI : MonoBehaviour {
         AddScore.OnSendScore += UpdateScore;
         Weapon.OnSendAmmo += UpdateAmmoCount;
         Weapon.OnSendReload += UpdateReloading;
+        SpawnersDestroyed.OnSendDestroyed += UpdateSpawnDestroy;
     }
 
     private void OnDisable()
@@ -42,6 +49,7 @@ public class GameUI : MonoBehaviour {
         AddScore.OnSendScore -= UpdateScore;
         Weapon.OnSendAmmo -= UpdateAmmoCount;
         Weapon.OnSendReload -= UpdateReloading;
+        SpawnersDestroyed.OnSendDestroyed -= UpdateSpawnDestroy;
 
         PlayerPrefs.SetInt("Score", playerScore);
         PlayerPrefs.SetInt("KillCounter", killCounter);
@@ -64,6 +72,23 @@ public class GameUI : MonoBehaviour {
             ReloadingText.text = "Press R to reload";
             ammoText.color = Color.red;
         }
+    }
+
+    private void UpdateSpawnDestroy(int spawn, int maxSpawn)
+    {
+        spawnCount += spawn;
+        maxSpawners = maxSpawn;
+
+
+        if(spawnCount == maxSpawners)
+        {
+            Invoke("winGame", 2);
+        }
+    }
+
+    private void winGame()
+    {
+        GetComponent<GameManager>().WinGame();
     }
 
     private void UpdateReloading(bool reloading)

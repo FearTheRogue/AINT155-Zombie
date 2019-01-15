@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Despawn : MonoBehaviour {
+
+    public float time;
         
-    public void ForceTimeout()
+    void Start()
     {
-        Destroy(gameObject);
+        Destroy(gameObject, time);
     }
 }

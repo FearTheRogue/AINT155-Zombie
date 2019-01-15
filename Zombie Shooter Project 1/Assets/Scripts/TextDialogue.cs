@@ -13,23 +13,23 @@ public class TextDialogue : MonoBehaviour
 
     public GameObject dialogueBox;
 
-    public GameObject continuebutton, skipbutton;
+    //public GameObject continuebutton, skipbutton;
 
 
     public void Awake()
     {
-        if (skipbutton != null)
-            skipbutton.SetActive(false);
-        continuebutton.SetActive(false);
+        //if (skipbutton != null)
+        //    skipbutton.SetActive(false);
+        //continuebutton.SetActive(false);
         dialogueBox.SetActive(false);
         //Invoke("StartConvo", 2);
     }
 
     public void StartConvo()
     {
-        continuebutton.SetActive(false);
-        if (skipbutton != null)
-            skipbutton.SetActive(true);
+       // continuebutton.SetActive(false);
+       // if (skipbutton != null)
+        //    skipbutton.SetActive(true);
         dialogueBox.SetActive(true);
         StartCoroutine(Type());
     }
@@ -37,12 +37,14 @@ public class TextDialogue : MonoBehaviour
     void Update()
     {
 
-        if (DialogueText.text == sentences[index])
-        {   
-            continuebutton.SetActive(true);
-        }
+     //   if (DialogueText.text == sentences[index])
+      //  {   
+          //  continuebutton.SetActive(true);
+     //   }
 
-        Time.timeScale = 1f; 
+        Time.timeScale = 1f;
+
+
     }
 
     IEnumerator Type()
@@ -55,13 +57,17 @@ public class TextDialogue : MonoBehaviour
         }
 
         Invoke("NextSentence", 3);
+        if (index == 2)
+        {
+            Invoke("TextBox", 2);
+        }
     }
 
     public void NextSentence()
     {
-        continuebutton.SetActive(false);
-        if(skipbutton != null)
-        skipbutton.SetActive(true);
+       // continuebutton.SetActive(false);
+      //  if(skipbutton != null)
+      //  skipbutton.SetActive(true);
 
         if (index < sentences.Length - 1)
         {
@@ -72,20 +78,25 @@ public class TextDialogue : MonoBehaviour
         else
         {
             DialogueText.text = "";
-            continuebutton.SetActive(false);
+       //     continuebutton.SetActive(false);
         }
     }
 
-    public void SkipButton()
+    void TextBox()
     {
-        if (index == 0 || index == 1 || index == 2 || index == 3 || index == 4 || index == 5 || index == 6 || index == 7)
-        {
-            index = 8;
-        } else if (index == 9 || index == 10 || index == 11 || index == 12)
-        {
-            index = 13;
-        }
-            // Finish this!!!
-        StartCoroutine(Type());
+        dialogueBox.SetActive(false);
     }
+
+    //public void SkipButton()
+    //{
+    //    if (index == 0 || index == 1 || index == 2 || index == 3 || index == 4 || index == 5 || index == 6 || index == 7)
+    //    {
+    //        index = 8;
+    //    } else if (index == 9 || index == 10 || index == 11 || index == 12)
+    //    {
+    //        index = 13;
+    //    }
+    //        // Finish this!!!
+    //    StartCoroutine(Type());
+    //}
 }

@@ -22,6 +22,11 @@ public class GameManager : MonoBehaviour {
         //PlayerPrefs.SetInt("playerCurrentLife", playerLife);
     }
 
+    public void WinGame()
+    {
+        SceneFader.instance.LoadLevel("Game Win");
+    }
+
     public void EndGame()
     {
         //SceneManager.LoadScene("Game Over");
