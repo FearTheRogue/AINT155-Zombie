@@ -13,7 +13,12 @@ Instructions:
 - D - Move Right
 - Cursor - Aim
 - Left Mouse Button - Fire
-- Pick Ups last 15 seconds
+- R = Reload Current Weapon
+- 1 = Weapon 1
+- 2 = Weapon 2 (If in Inventory)
+- 3 = Weapon 3 (If in Inventory)
+- 4 = Weapon 4 (If in Inventory)
+- Pick Ups last 10 seconds
 
 References:
 
@@ -29,8 +34,3 @@ Artwork for Menu Screens:
 
 Font: 
 - https://www.dafont.com/search.php?q=close+and+open
-
-Bugs:
-- Pause button doesn't work
-- When collecting pick ups, character can occasionally run outside the playable area
-- When collecting multiple pick ups, character occasionally cannot collect any more pick ups, for a short time
