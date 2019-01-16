@@ -18,33 +18,19 @@ public class TextDialogue : MonoBehaviour
 
     public void Awake()
     {
-        //if (skipbutton != null)
-        //    skipbutton.SetActive(false);
-        //continuebutton.SetActive(false);
+
         dialogueBox.SetActive(false);
-        //Invoke("StartConvo", 2);
     }
 
     public void StartConvo()
     {
-       // continuebutton.SetActive(false);
-       // if (skipbutton != null)
-        //    skipbutton.SetActive(true);
         dialogueBox.SetActive(true);
         StartCoroutine(Type());
     }
 
     void Update()
     {
-
-     //   if (DialogueText.text == sentences[index])
-      //  {   
-          //  continuebutton.SetActive(true);
-     //   }
-
-        Time.timeScale = 1f;
-
-
+       // Time.timeScale = 1f;
     }
 
     IEnumerator Type()

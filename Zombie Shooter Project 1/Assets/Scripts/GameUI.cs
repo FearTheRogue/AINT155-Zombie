@@ -26,6 +26,7 @@ public class GameUI : MonoBehaviour {
     {
         if(spawnersDestroyedText != null)
         spawnersDestroyedText.text = "SPAWNERS DESTROYED: " + spawnCount + " / " + maxSpawners;
+        print(Time.timeScale);
     }
 
     private void Start()
@@ -121,16 +122,6 @@ public class GameUI : MonoBehaviour {
         healthRemainingText.text = healthBar.value + " / 50";
     }
 
-    //public void UpdateAll()
-    //{
-    //    healthBar.value = healthBar.value;
-    //}
-
-    //private void UpdateZHealthBar(int zHealth)
-    //{
-    //    zHealthBar.value = zHealth;
-    //}
-
     private void UpdateScore(int theScore)
     {   
         playerScore += theScore;
@@ -141,7 +132,8 @@ public class GameUI : MonoBehaviour {
 
     public void PauseGame()
     {
-        Time.timeScale = 0f;
+
+        Time.timeScale =  0f;
         pausePanel.SetActive(true);
     }
 

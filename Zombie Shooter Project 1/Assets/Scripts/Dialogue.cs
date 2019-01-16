@@ -20,7 +20,7 @@ public class Dialogue : MonoBehaviour
     public GameObject continuebutton, skipbutton;
     public GameObject pistolPickup;
     public GameObject Infected;
-    public GameObject gate;
+    public GameObject gate, box, box2;
     public GameObject healthBar, zHealthBar;
     public GameObject pickUp;
     //public Animation FadeIn;
@@ -32,6 +32,7 @@ public class Dialogue : MonoBehaviour
         continuebutton.SetActive(false);
         dialogueBox.SetActive(false);
         Invoke("StartConvo", 2);
+        //Time.timeScale = 1f;
     }
 
     void StartConvo()
@@ -54,7 +55,7 @@ public class Dialogue : MonoBehaviour
             continuebutton.SetActive(true);
         }
 
-        Time.timeScale = 1f; 
+        //Time.timeScale = 1f; 
         Spawns();
         //SkipButton();
         //IdleRigidbody2D.velocity = Vector2.zero;
@@ -124,7 +125,7 @@ public class Dialogue : MonoBehaviour
         {
             playerMovement.speed = 5f;
 
-            Time.timeScale = 1f;
+            //Time.timeScale = 1f;
             pistolPickup.SetActive(true);
             continuebutton.SetActive(false);
             skipbutton.SetActive(false);
@@ -142,6 +143,7 @@ public class Dialogue : MonoBehaviour
         else if (index == 15)
         {
             playerMovement.speed = 5f;
+            box.SetActive(false);
             skipbutton.SetActive(false);
             zHealthBar.SetActive(true);
             continuebutton.SetActive(false);
@@ -152,7 +154,7 @@ public class Dialogue : MonoBehaviour
         }
         else if(index == 17)
         {
-            Time.timeScale = 1f;
+            //Time.timeScale = 1f;
             healthBar.SetActive(true);
             skipbutton.SetActive(false);
             //continuebutton.SetActive(false);
@@ -161,13 +163,14 @@ public class Dialogue : MonoBehaviour
         {
             playerMovement.speed = 5f;
 
-            Time.timeScale = 1f;
+            //Time.timeScale = 1f;
             skipbutton.SetActive(false);
             pickUp.SetActive(true);
             continuebutton.SetActive(false);
         }
         else if(index == 22)
         {
+            box2.SetActive(false);
             gateFX.Play();
             continuebutton.SetActive(false);
             skipbutton.SetActive(false);

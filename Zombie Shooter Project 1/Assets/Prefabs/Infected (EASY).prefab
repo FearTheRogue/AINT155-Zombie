@@ -1036,12 +1036,6 @@ MonoBehaviour:
       PublicKeyToken=null
   audioSource: {fileID: 82961576406489748}
   InfectedSpawn: {fileID: 8300000, guid: 85ce26b03cfb51b4c85de01ab76f2c26, type: 3}
-  drop:
-  - {fileID: 4048971550646830, guid: d73e50ed81c21fc41a5ce7f450180a18, type: 2}
-  - {fileID: 4607960442941788, guid: b94df14da2165654bbeeadb1ac8d6acc, type: 2}
-  - {fileID: 4128001677389808, guid: 9af64415068a3d2478db1222837a6723, type: 2}
-  - {fileID: 4444155125087422, guid: 5f302670a6bc97c4ab95e443250005e2, type: 2}
-  - {fileID: 4329956993678866, guid: 064da458162db4a4188a4029afb1c1ec, type: 2}
 --- !u!114 &114716058395386148
 MonoBehaviour:
   m_ObjectHideFlags: 1

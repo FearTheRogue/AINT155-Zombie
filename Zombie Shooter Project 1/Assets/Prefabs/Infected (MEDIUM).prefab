@@ -885,7 +885,7 @@ MonoBehaviour:
   - name: Inv
     pickUps: {fileID: 1772931943206182, guid: 064da458162db4a4188a4029afb1c1ec, type: 2}
     dropRarity: 10
-  dropChance: 50
+  dropChance: 30
 --- !u!114 &114984367120964118
 MonoBehaviour:
   m_ObjectHideFlags: 1
