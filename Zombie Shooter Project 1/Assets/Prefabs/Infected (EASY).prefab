@@ -900,14 +900,14 @@ MonoBehaviour:
     dropRarity: 20
   - name: Speed
     pickUps: {fileID: 1282452912684990, guid: 5f302670a6bc97c4ab95e443250005e2, type: 2}
-    dropRarity: 60
+    dropRarity: 25
   - name: FireRate
     pickUps: {fileID: 1262275663214168, guid: b94df14da2165654bbeeadb1ac8d6acc, type: 2}
     dropRarity: 35
   - name: Inv
     pickUps: {fileID: 1772931943206182, guid: 064da458162db4a4188a4029afb1c1ec, type: 2}
     dropRarity: 10
-  dropChance: 50
+  dropChance: 40
 --- !u!114 &114580808155897404
 MonoBehaviour:
   m_ObjectHideFlags: 1

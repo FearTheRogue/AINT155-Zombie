@@ -32,6 +32,7 @@ public class SceneFader : MonoBehaviour {
 
     public void LoadLevel(string level)
     {
+        // Starts the coroutine of fading in the level 
         StartCoroutine(FadeInOut(level));
     }
 

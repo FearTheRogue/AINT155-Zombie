@@ -8,6 +8,7 @@ public class Despawn : MonoBehaviour {
         
     void Start()
     {
+        // Destroys the game object after the time has been set
         Destroy(gameObject, time);
     }
 }

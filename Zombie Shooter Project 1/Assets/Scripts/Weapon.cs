@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Weapon : MonoBehaviour {
 
+    // send the delegate and event for the ammo count and a bool reloading
     public delegate void UpdateSendAmmo(int theAmmoCount);
     public static event UpdateSendAmmo OnSendAmmo;
     public delegate void UpdateSendReloading(bool isReloading);
@@ -19,19 +20,27 @@ public class Weapon : MonoBehaviour {
     public Sprite sprite;
     public Sprite gunImage;
 
+   // public Animator MiniGunAnim;
+
     public int maxAmmo = 10;
     public int currentAmmo;
     public float reloadTime = 1f;
 
+    // sets the audio clips 
     public AudioClip fireSound;
     public AudioClip reloadSound;
 
     private bool isFiring = false;
     private bool isReloading = false;
 
-    void Start()
+    public void Start()
     {
+        // sets the current ammo to the max ammo 
         currentAmmo = maxAmmo;
+
+       // if (GetComponent<Animator>() != null)
+         //  MiniGunAnim = GetComponent<Animator>();
+        //MiniGunAnim.SetBool("isFiring", false);
     }
 
     void OnEnable()
@@ -43,6 +52,7 @@ public class Weapon : MonoBehaviour {
     {
         if (OnSendAmmo != null)
         {
+            // send the current ammo 
             OnSendAmmo(currentAmmo);
         }
     }
@@ -51,6 +61,7 @@ public class Weapon : MonoBehaviour {
     {
         if(OnSendReload != null)
         {
+            // send whether the gun is reloading
             OnSendReload(isReloading);
         }
     }
@@ -63,70 +74,77 @@ public class Weapon : MonoBehaviour {
     private void Fire()
     {
         isFiring = true;
-
+        // current ammo is taken away 
         currentAmmo--;
 
         for (int i = 0; i < bulletSpawn.Length; i++)
         {
             Instantiate(bulletPrefab, bulletSpawn[i].position, bulletSpawn[i].rotation);
+            // adds a muzzleflash to each bullet spawn
             Transform MuzzleFlash = Instantiate(MuzzleFlashPrefab, bulletSpawn[i].position, bulletSpawn[i].rotation) as Transform;
             MuzzleFlash.parent = bulletSpawn[i];
+            // randomizes each muzzleflash slightly
             float size = Random.Range(0.6f, 0.9f);
             MuzzleFlash.localScale = new Vector3(size, size, 0);
+            // gives the muzzleflash z rotation and adds 90
             MuzzleFlash.eulerAngles = new Vector3(MuzzleFlash.eulerAngles.x, MuzzleFlash.eulerAngles.y, MuzzleFlash.eulerAngles.z + 90);
-
+            // destroys the muzzel flash after the given time
             Destroy(MuzzleFlash.gameObject, 0.04f);
         }
-
+        // sends a message to shake the camera 
         GameObject.FindGameObjectWithTag("MainCamera").SendMessage("DoShake");
 
         if (GetComponent<AudioSource>() != null)
         {
+            // plays the firing sound
             GetComponent<AudioSource>().clip = fireSound;
             GetComponent<AudioSource>().Play();
         }
-
         Invoke("SetFiring", fireTime);
     }
 
-    void Effect()
-    {
-        
-    }
-    
 	// Update is called once per frame
-	private void Update () {
+	public void Update () {
 
         OnReloading(isReloading);
+        // if the player presses R it force reloades 
         forceReload();
-
+        
+        // if is the gun is already reloading, return it
         if (isReloading)
             return;
 
         if(currentAmmo <= 0)
         {
+            // if the ammo is = to 0 start reloading
             StartCoroutine(Reload());
             return;
         }
 
+        // get the mouse button for firing
         if (Input.GetMouseButton(0))
         {
             if (!isFiring)
             {
+                // calls the fire method
                 Fire();
+                //MiniGunAnim.SetBool("isMiniGunFiring", true);
             }
         }
+        // sends the updated ammo count
         OnAmmoCount();
     }
 
     private void forceReload()
     {
+        // stops the player from reloading if the current ammo is full
         if (currentAmmo == maxAmmo)
         {
             return;
         }
         else
         { 
+            // sets the reloading key
             if (Input.GetKeyDown(KeyCode.R))
             {
                 StartCoroutine(Reload());
@@ -142,6 +160,7 @@ public class Weapon : MonoBehaviour {
 
         if (GetComponent<AudioSource>() != null)
         {
+            // plays the reloading clip
             GetComponent<AudioSource>().clip = reloadSound;
             GetComponent<AudioSource>().Play();
             //Debug.Log("Reloading Sound from IEnumarator");
@@ -151,7 +170,8 @@ public class Weapon : MonoBehaviour {
         //Debug.Log("Reloading..");
 
         yield return new WaitForSeconds(reloadTime);
-
+         
+        // sets the current ammo back to max
         currentAmmo = maxAmmo;
 
         isReloading = false;

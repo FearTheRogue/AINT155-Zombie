@@ -6,6 +6,7 @@ public class NewCameraMovement : MonoBehaviour {
 
     public Transform lookAt;
 
+    // Sets the bounds for x and y
     public float boundX = 1.2f;
     public float boundY = 1.2f;
     public float speed = 0.15f;

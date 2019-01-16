@@ -5,14 +5,19 @@ using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
-
+    // Creates a text calles DialogueText 
     public Text DialogueText;
+    // Creates a string array 
     public string[] sentences;
+    // Creates an int 
     private int index;
+    // Creates a float for the speed of the text 
     public float typingSpeed;
-
+    
+    // Creates player idle movement and set to 0
     private float idlePlayerMovement = 0;
 
+    // Gets a reference from TopDownCharacterController2D
     public TopDownCharacterController2D playerMovement;
     public ParticleSystem gateFX;
     public GameObject dialogueBox;
@@ -25,6 +30,7 @@ public class Dialogue : MonoBehaviour
     public GameObject pickUp;
     //public Animation FadeIn;
 
+        // Sets the skipbutton, continuebutton and dialogouebox to false and waites 2 seconds to run the StartConvo Method 
     public void Awake()
     {
         if(skipbutton != null)
@@ -38,25 +44,34 @@ public class Dialogue : MonoBehaviour
     void StartConvo()
     {
         //FadeIn.enabled = true;
+        // Sets the continue button to false
         continuebutton.SetActive(false);
+        // if there is a skip button attached, set it to true 
         if (skipbutton != null)
             skipbutton.SetActive(true);
+        // Sets the dialoguebox to true
         dialogueBox.SetActive(true);
+        // Starts the typing of each sentence 
         StartCoroutine(Type());
 
+        // retrieves the players movement and places it into the variable
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<TopDownCharacterController2D>();
     }
 
     void Update()
     {
-
+        // If dialogue text is = to sentences 
         if (DialogueText.text == sentences[index])
         {   
+            // sets the continue button to true
             continuebutton.SetActive(true);
         }
 
-        //Time.timeScale = 1f; 
+        //Time.timeScale = 1f;
+         
+        // Calls the Spawn() method
         Spawns();
+        
         //SkipButton();
         //IdleRigidbody2D.velocity = Vector2.zero;
 
@@ -66,9 +81,12 @@ public class Dialogue : MonoBehaviour
 
     IEnumerator Type()
     {
+        // the the couroutine is called, the movement speed of the player is set to 0
         playerMovement.speed = idlePlayerMovement;
 
+        // dialoguebox is emptied
         DialogueText.text = "";
+        // each character in sentences has an index, and it typing one by one at the speed of typingSpeed
         foreach (char letter in sentences[index].ToCharArray())
         {
             DialogueText.text += letter;
@@ -78,9 +96,10 @@ public class Dialogue : MonoBehaviour
 
     public void NextSentence()
     {
+        // sets the continue to false and the skip button to true  
         continuebutton.SetActive(false);
         skipbutton.SetActive(true);
-
+        //if the sentence has finished typing it starts the next sentence for the Coroutine
         if (index < sentences.Length - 1)
         {
             index++;
@@ -96,7 +115,9 @@ public class Dialogue : MonoBehaviour
 
     public void SkipButton()
     {
+        // if skip button is pressed, it sets the continue button to false 
         continuebutton.SetActive(false);
+        // if the index = to any of these numbers and the skip button is pressed, it sets the index number
         if (index == 0 || index == 1 || index == 2 || index == 3 || index == 4 || index == 5 || index == 6 || index == 7)
         {
             index = 8;
@@ -110,12 +131,13 @@ public class Dialogue : MonoBehaviour
             index = 22;
             continuebutton.SetActive(false);
         }
-            
+            // starts the corouting again
         StartCoroutine(Type());
     }
 
     public void Spawns()
     {
+        // if any of the indexs = to these numbers, it will spawn 
         if(index == 8)
         {
             playerMovement.speed = 5f;

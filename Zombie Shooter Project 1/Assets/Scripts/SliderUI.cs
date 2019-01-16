@@ -10,6 +10,7 @@ public class SliderUI : MonoBehaviour {
 	
 	public void SliderHealth(int health)
     {
+        // sets the sliders value to health
         healthBar.value = health;
     }
 }

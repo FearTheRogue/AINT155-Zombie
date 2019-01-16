@@ -39,7 +39,7 @@ public class DamageIncrease : MonoBehaviour
      */
     private float time = 10;
     //private float NewfireTime = 0.1f;
-    public AudioSource pickUp;
+   // public AudioSource pickUp;
 
 
    // public Sprite damage;
@@ -66,12 +66,6 @@ public class DamageIncrease : MonoBehaviour
     //    if (transform.parent.GetComponent<SpriteRenderer>() != null)
     //        damage = transform.parent.GetComponent<SpriteRenderer>().sprite;
     //}
-
-    void update()
-    {
-
-        Invoke("TimeOut", time);
-    }
 
     void Start()
     {

@@ -5,10 +5,13 @@ using UnityEngine.UI;
 
 public class TextDialogue : MonoBehaviour
 {
-
+    // Creates a text calles DialogueText 
     public Text DialogueText;
+    // Creates a string array 
     public string[] sentences;
+    // Creates an int 
     private int index;
+    // Creates a float for the speed of the text 
     public float typingSpeed;
 
     public GameObject dialogueBox;
@@ -22,20 +25,19 @@ public class TextDialogue : MonoBehaviour
         dialogueBox.SetActive(false);
     }
 
+    // Sets the dialoguebox to true
     public void StartConvo()
     {
         dialogueBox.SetActive(true);
+        // Starts the typing of each sentence 
         StartCoroutine(Type());
-    }
-
-    void Update()
-    {
-       // Time.timeScale = 1f;
     }
 
     IEnumerator Type()
     {
+        // dialoguebox is emptied
         DialogueText.text = "";
+        // each character in sentences has an index, and it typing one by one at the speed of typingSpeed
         foreach (char letter in sentences[index].ToCharArray())
         {
             DialogueText.text += letter;
@@ -51,10 +53,11 @@ public class TextDialogue : MonoBehaviour
 
     public void NextSentence()
     {
-       // continuebutton.SetActive(false);
-      //  if(skipbutton != null)
-      //  skipbutton.SetActive(true);
+        // continuebutton.SetActive(false);
+        //  if(skipbutton != null)
+        //  skipbutton.SetActive(true);
 
+        //if the sentence has finished typing it starts the next sentence for the Coroutine
         if (index < sentences.Length - 1)
         {
             index++;
@@ -70,19 +73,7 @@ public class TextDialogue : MonoBehaviour
 
     void TextBox()
     {
+        // sets the dialogue button to false
         dialogueBox.SetActive(false);
     }
-
-    //public void SkipButton()
-    //{
-    //    if (index == 0 || index == 1 || index == 2 || index == 3 || index == 4 || index == 5 || index == 6 || index == 7)
-    //    {
-    //        index = 8;
-    //    } else if (index == 9 || index == 10 || index == 11 || index == 12)
-    //    {
-    //        index = 13;
-    //    }
-    //        // Finish this!!!
-    //    StartCoroutine(Type());
-    //}
 }

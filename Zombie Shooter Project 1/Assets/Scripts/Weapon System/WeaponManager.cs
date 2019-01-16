@@ -38,6 +38,8 @@ public class WeaponManager : MonoBehaviour
 
     public Image GunImage;
 
+   // public Animator GunAnim;
+
     /*
      * START
      * see link: https://docs.unity3d.com/ScriptReference/MonoBehaviour.Start.html
@@ -93,6 +95,9 @@ public class WeaponManager : MonoBehaviour
 
                     if (transform.GetChild(i).GetComponent<Weapon>().gunImage != null)
                         GunImage.sprite = transform.GetChild(i).GetComponent<Weapon>().gunImage;
+
+                    //if(transform.GetChild(i).GetComponent<Weapon>().MiniGunAnim != null)
+                    //GunAnim = transform.GetChild(i).GetComponent<Weapon>().MiniGunAnim;
 
                         // GunImage.sprite = transform.GetChild(i).GetComponent<Weapon>().sprite;
                 }

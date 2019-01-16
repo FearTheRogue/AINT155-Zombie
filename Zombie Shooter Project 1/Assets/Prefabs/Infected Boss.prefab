@@ -479,7 +479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d88a2f3e13b719c43a1545f2a0db99fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 30
+  health: 25
   onDie:
     m_PersistentCalls:
       m_Calls:
@@ -741,9 +741,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 30
+  m_MaxValue: 25
   m_WholeNumbers: 1
-  m_Value: 30
+  m_Value: 25
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -792,12 +792,6 @@ MonoBehaviour:
   audioSource: {fileID: 82533910257440016, guid: 28ec4c80044cedf4dab6886ee94af4b9,
     type: 2}
   InfectedSpawn: {fileID: 8300000, guid: 5e117e3581ff5214cac160ade60c8f32, type: 3}
-  drop:
-  - {fileID: 4048971550646830, guid: d73e50ed81c21fc41a5ce7f450180a18, type: 2}
-  - {fileID: 4607960442941788, guid: b94df14da2165654bbeeadb1ac8d6acc, type: 2}
-  - {fileID: 4128001677389808, guid: 9af64415068a3d2478db1222837a6723, type: 2}
-  - {fileID: 4444155125087422, guid: 5f302670a6bc97c4ab95e443250005e2, type: 2}
-  - {fileID: 4329956993678866, guid: 064da458162db4a4188a4029afb1c1ec, type: 2}
 --- !u!114 &114956781399477370
 MonoBehaviour:
   m_ObjectHideFlags: 1

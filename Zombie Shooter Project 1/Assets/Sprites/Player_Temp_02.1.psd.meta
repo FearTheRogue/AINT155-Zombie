@@ -6,6 +6,12 @@ TextureImporter:
     21300002: Player_Temp_02.1_Pistol
     21300004: Player_Temp_02.1_AR
     21300006: Player_Temp_02.1_Shot
+    21300008: Player_Temp_02.1_0
+    21300010: Player_Temp_02.1_1
+    21300012: Player_Temp_02.1_2
+    21300014: Player_Temp_02.1_3
+    21300016: Player_Temp_02.1_4
+    21300018: Player_Temp_02.1_5
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -86,7 +92,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_Temp_02.1_Idle
+      name: Player_Temp_02.1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -100,13 +106,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c094e050b25ff2f4586f08608ef8eb11
+      spriteID: eac959dd7551eb349ab10e043123859a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Temp_02.1_Pistol
+      name: Player_Temp_02.1_1
       rect:
         serializedVersion: 2
         x: 256
@@ -120,13 +126,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3590a395d2be5884a8d35ccea7d83e10
+      spriteID: 207566afc81f24d48ae4357148301e7d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Temp_02.1_AR
+      name: Player_Temp_02.1_2
       rect:
         serializedVersion: 2
         x: 512
@@ -140,13 +146,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 989176b23d277f744bdc6f8143115c9c
+      spriteID: 037cf370837bef846a58859a64b7cdad
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Temp_02.1_Shot
+      name: Player_Temp_02.1_3
       rect:
         serializedVersion: 2
         x: 768
@@ -160,7 +166,47 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 943c7cc4520c33d4e83e5ececd001bb7
+      spriteID: b9b1ce95b47b7c94088e759df5b0e13c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Temp_02.1_4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5366e6ff0ebf6043aa58c2b7291503c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Temp_02.1_5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 368ba7f23519114409c4991a8991fae5
       vertices: []
       indices: 
       edges: []
