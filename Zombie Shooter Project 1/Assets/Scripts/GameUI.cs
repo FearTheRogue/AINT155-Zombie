@@ -85,11 +85,11 @@ public class GameUI : MonoBehaviour {
     }
 
     // if the destroyed spawners = to the max spawnwers, invoke win scene 
-    private void UpdateSpawnDestroy(int spawn, int maxSpawn)
+    private void UpdateSpawnDestroy(int spawn)
     {
         spawnCount += spawn;
         Debug.Log(spawnCount);
-        maxSpawners = maxSpawn;
+       // maxSpawners = maxSpawn;
 
 
         if(spawnCount == maxSpawners)
