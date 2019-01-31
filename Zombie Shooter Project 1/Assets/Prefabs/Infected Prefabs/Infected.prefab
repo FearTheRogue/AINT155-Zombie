@@ -678,7 +678,6 @@ MonoBehaviour:
       PublicKeyToken=null
   audioSource: {fileID: 0}
   InfectedSpawn: {fileID: 0}
-  drop: []
 --- !u!114 &114741471811841184
 MonoBehaviour:
   m_ObjectHideFlags: 1

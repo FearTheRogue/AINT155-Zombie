@@ -6,9 +6,10 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
-    //public int playerLife;
-
-        // Starts the game
+    public void LevelMenu()
+    {
+        SceneFader.instance.LoadLevel("Level Menu");
+    }
 
     public void StartGame()
     {

@@ -406,7 +406,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 238bfcd31db347545b59d59065645da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealthBar: {fileID: 114372211572662934}
 --- !u!114 &114209555636842286
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -562,10 +561,9 @@ MonoBehaviour:
   prefabToSpawn: {fileID: 1581885703391738, guid: 20a44297086270548b4969fdf091f053,
     type: 2}
   adjustmentAngle: 0
+  updatenum: 0
   InfectedMaxCount: 10
   CurrentInfectedNum: 0
-  boundX: 1.2
-  boundY: 1.2
 --- !u!114 &114458188896272200
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -588,6 +586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af866947126eda14a9435c05da5c7fb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyHealthBar: {fileID: 0}
   onSpawn:
     m_PersistentCalls:
       m_Calls:
@@ -604,6 +603,8 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: EnemySpawnedEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  audioSource: {fileID: 0}
+  InfectedSpawn: {fileID: 0}
 --- !u!114 &114486944082539638
 MonoBehaviour:
   m_ObjectHideFlags: 1
