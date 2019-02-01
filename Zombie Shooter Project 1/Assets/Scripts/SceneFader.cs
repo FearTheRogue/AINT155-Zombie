@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneFader : MonoBehaviour {
 
@@ -13,13 +14,14 @@ public class SceneFader : MonoBehaviour {
     [SerializeField]
     private Animator fadeAnim;
 
-	void Awake () {
-        MakeSingleton();
-	}
-	
-	void MakeSingleton()
+    void Awake()
     {
-        if(instance != null)
+        MakeSingleton();
+    }
+
+    void MakeSingleton()
+    {
+        if (instance != null)
         {
             Destroy(gameObject);
         }
@@ -32,7 +34,7 @@ public class SceneFader : MonoBehaviour {
 
     public void LoadLevel(string level)
     {
-        // Starts the coroutine of fading in the level 
+        //Starts the coroutine of fading in the level
         StartCoroutine(FadeInOut(level));
     }
 

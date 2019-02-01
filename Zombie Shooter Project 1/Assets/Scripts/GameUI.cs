@@ -13,6 +13,8 @@ public class GameUI : MonoBehaviour {
     public Text scoreText, healthText, deathText, ammoText, ReloadingText, healthRemainingText, spawnersDestroyedText;
     public Animator scoreAnim;
 
+    public GameManager gameManager;
+
     //public Sprite fireRate, Damage, Invinciblity, Stamina;
 
     public AudioSource bg_sound;
@@ -94,7 +96,8 @@ public class GameUI : MonoBehaviour {
 
         if(spawnCount == maxSpawners)
         {
-            Invoke("winGame", 2);
+            gameManager.WinGame();
+            //Invoke("winGame", 2);
         }
     }
 

@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class LevelSelector : MonoBehaviour {
 
-    public SceneFader fader;
+    public SceneFader_01 fader;
 
     public Button[] levelButtons;
 
     void Start()
     {
-        int levelReached = PlayerPrefs.GetInt("levelReached", 1);
+        int levelReached = PlayerPrefs.GetInt("levelReached", 1); // 1 = tutorial level
 
         for (int i = 0; i < levelButtons.Length; i++)
         {
@@ -22,7 +22,7 @@ public class LevelSelector : MonoBehaviour {
 
     public void Select (string levelName)
     {
-        fader.LoadLevel(levelName);
+        fader.FadeTo(levelName);
     }
 
 }
