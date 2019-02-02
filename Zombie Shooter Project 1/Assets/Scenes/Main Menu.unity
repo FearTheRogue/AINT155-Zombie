@@ -299,6 +299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextLevel: 
   levelToUnlock: 0
+  gameOverUI: {fileID: 0}
   sceneFader: {fileID: 1420552893}
 --- !u!4 &377928604
 Transform:
@@ -15463,7 +15464,7 @@ Animator:
   m_GameObject: {fileID: 1062693770}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7cfa9459dc2819d4faf12db46b894310, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8cb57c627328b2349a52c88ff08e916b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
