@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 
 public class Weapon : MonoBehaviour {
@@ -73,6 +74,9 @@ public class Weapon : MonoBehaviour {
 
     private void Fire()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
+
         isFiring = true;
         // current ammo is taken away 
         currentAmmo--;

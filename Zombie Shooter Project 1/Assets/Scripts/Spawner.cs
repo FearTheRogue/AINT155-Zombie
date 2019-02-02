@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Spawner : MonoBehaviour {
 
@@ -30,6 +31,7 @@ public class Spawner : MonoBehaviour {
             SendCurrentEnemyNum(CurrentInfectedNum);
             print(CurrentInfectedNum + " has spawned");
             CurrentInfectedNum++;
+            
         }
        
     }

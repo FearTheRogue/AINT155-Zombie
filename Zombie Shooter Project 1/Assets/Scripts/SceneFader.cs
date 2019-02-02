@@ -6,52 +6,52 @@ using UnityEngine.UI;
 
 public class SceneFader : MonoBehaviour {
 
-    public static SceneFader instance;
+    //public static SceneFader instance;
 
-    [SerializeField]
-    private GameObject fadePanel;
+    //[SerializeField]
+    //private GameObject fadePanel;
 
-    [SerializeField]
-    private Animator fadeAnim;
+    //[SerializeField]
+    //private Animator fadeAnim;
 
-    void Awake()
-    {
-        MakeSingleton();
-    }
+    //void Awake()
+    //{
+    //    MakeSingleton();
+    //}
 
-    void MakeSingleton()
-    {
-        if (instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-    }
+    //void MakeSingleton()
+    //{
+    //    if (instance != null)
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //    else
+    //    {
+    //        instance = this;
+    //        DontDestroyOnLoad(gameObject);
+    //    }
+    //}
 
-    public void LoadLevel(string level)
-    {
-        //Starts the coroutine of fading in the level
-        StartCoroutine(FadeInOut(level));
-    }
+    //public void LoadLevel(string level)
+    //{
+    //    Starts the coroutine of fading in the level
+    //    StartCoroutine(FadeInOut(level));
+    //}
 
-    IEnumerator FadeInOut(string level)
-    {
-        fadePanel.SetActive(true);
-        fadeAnim.Play("FadeInScene");
+    //IEnumerator FadeInOut(string level)
+    //{
+    //    fadePanel.SetActive(true);
+    //    fadeAnim.Play("FadeInScene");
 
-        yield return new WaitForSeconds(1f);
+    //    yield return new WaitForSeconds(1f);
 
-        SceneManager.LoadScene(level);
+    //    SceneManager.LoadScene(level);
 
-        fadeAnim.Play("FadeOutScene");
+    //    fadeAnim.Play("FadeOutScene");
 
-        yield return new WaitForSeconds(0.7f);
+    //    yield return new WaitForSeconds(0.7f);
 
-        fadePanel.SetActive(false);
-    }
+    //    fadePanel.SetActive(false);
+    //}
 
 }
