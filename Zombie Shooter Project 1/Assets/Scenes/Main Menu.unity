@@ -5712,7 +5712,7 @@ Animator:
   m_GameObject: {fileID: 626695764}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7cfa9459dc2819d4faf12db46b894310, type: 2}
+  m_Controller: {fileID: 9100000, guid: f924ae345328bfd46afde6b87addf05d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -15269,10 +15269,10 @@ GameObject:
   - component: {fileID: 1062693778}
   - component: {fileID: 1062693777}
   - component: {fileID: 1062693776}
-  - component: {fileID: 1062693775}
   - component: {fileID: 1062693774}
   - component: {fileID: 1062693773}
   - component: {fileID: 1062693772}
+  - component: {fileID: 1062693775}
   m_Layer: 5
   m_Name: Start Button
   m_TagString: Untagged
@@ -15464,7 +15464,7 @@ Animator:
   m_GameObject: {fileID: 1062693770}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8cb57c627328b2349a52c88ff08e916b, type: 2}
+  m_Controller: {fileID: 9100000, guid: f924ae345328bfd46afde6b87addf05d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
