@@ -18,6 +18,8 @@ public class enemyController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        // get rid of this
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         enemiesLeft = enemies.Length;
 

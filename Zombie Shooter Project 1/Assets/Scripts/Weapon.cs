@@ -74,8 +74,9 @@ public class Weapon : MonoBehaviour {
 
     private void Fire()
     {
-        if (EventSystem.current.IsPointerOverGameObject())
-            return;
+        
+        //if (EventSystem.current.IsPointerOverGameObject())
+        //    return;
 
         isFiring = true;
         // current ammo is taken away 

@@ -172,6 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupType: 1
   health: 10
+  pickUP: {fileID: 8300000, guid: a2d4820b79cd64b4a8812eed5aa32f8d, type: 3}
 --- !u!198 &198064449432750322
 ParticleSystem:
   m_ObjectHideFlags: 1

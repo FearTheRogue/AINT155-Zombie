@@ -42,6 +42,9 @@ public enum PickupType
 
 public class Pickup : MonoBehaviour
 {
+    public delegate void PickupCollected(PickupType type);
+    public static event PickupCollected OnPickupCollected;
+
     /*
      * pickupType
      * this is from the "PickupType" enum above
@@ -59,7 +62,7 @@ public class Pickup : MonoBehaviour
     public int health = 10;
     //public Sprite pickup;
 
-    //public AudioSource pickUP;
+    public AudioClip pickUP;
 
     /*
      * OnTriggerEnter2D
@@ -127,6 +130,10 @@ public class Pickup : MonoBehaviour
             default:
                 break;
         }
+
+        AudioSource.PlayClipAtPoint(pickUP, transform.position);
+
+        if (OnPickupCollected != null) OnPickupCollected.Invoke(pickupType);
 
         /*
          * DESTROY THE PICKUP GAMEOBJECT

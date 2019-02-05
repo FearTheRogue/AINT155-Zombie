@@ -12,6 +12,7 @@ public class CurrentEnemies : MonoBehaviour {
 
     private void OnEnable()
     {
+        print(transform.childCount);
         // gets the OnSendEnemyNum for Spawner script and adds an enemy into the currentNum
         Spawner.OnSendEnemyNum += UpdateEnemyNum;
         //HealthSystem.OnSendEnemyNum += UpdateEnemy;

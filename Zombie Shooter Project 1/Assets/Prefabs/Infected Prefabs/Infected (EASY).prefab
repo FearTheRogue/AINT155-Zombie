@@ -752,6 +752,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 114618741493703470}
+        m_MethodName: Dead
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   OnDamaged:
@@ -973,6 +984,7 @@ MonoBehaviour:
   updatenum: 0
   InfectedMaxCount: 10
   CurrentInfectedNum: 0
+  CurrentSpawned: 0
 --- !u!114 &114622644743687386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1064,7 +1076,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
 --- !u!114 &114776754141256056
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -160,6 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupType: 0
   health: 10
+  pickUP: {fileID: 8300000, guid: a2d4820b79cd64b4a8812eed5aa32f8d, type: 3}
 --- !u!114 &114502973215481894
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -34,6 +34,12 @@ public class GameUI : MonoBehaviour {
     
     public bool Reloading = false;
 
+
+    public float pickuDisplayTimer = 2;
+    public Sprite[] pickupImages;
+
+    public Image pickupImage;
+
     // updates the spawns destroyed text 
     public void Update()
     {
@@ -50,6 +56,8 @@ public class GameUI : MonoBehaviour {
 
         if(LevelTextAnim != null)
         LevelTextAnim.SetTrigger("LevelTextTrigger");
+
+        pickupImage.enabled = false;
     }
 
     private void OnEnable()
@@ -60,6 +68,7 @@ public class GameUI : MonoBehaviour {
         Weapon.OnSendAmmo += UpdateAmmoCount;
         Weapon.OnSendReload += UpdateReloading;
         SpawnersDestroyed.OnSendDestroyed += UpdateSpawnDestroy;
+        Pickup.OnPickupCollected += OnPickupCollected;
     }
 
     private void OnDisable()
@@ -173,6 +182,34 @@ public class GameUI : MonoBehaviour {
         // sets the timescale to 1 and loads the main menu scene
         Time.timeScale = 1f;
         SceneManager.LoadScene("Main Menu");
+    }
+
+    public void OnPickupCollected(PickupType type)
+    {
+        
+        switch (type)
+        {
+            case PickupType.Damage:
+                pickupImage.sprite = pickupImages[0];
+                break;
+            case PickupType.Invincible:
+                break;
+            case PickupType.AttackSpeed:
+                break;
+            case PickupType.MoveSpeed:
+                break;
+            default:
+                break;
+        }
+        pickupImage.enabled = true;
+
+        Invoke("TurnOffPickupDisplay", pickuDisplayTimer);
+    }
+
+    void TurnOffPickupDisplay()
+    {
+        pickupImage.enabled = false;
+        
     }
 
 } // GameUI

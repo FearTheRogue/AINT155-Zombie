@@ -18,6 +18,8 @@ public class Spawner : MonoBehaviour {
     public int InfectedMaxCount = 10;
     public int CurrentInfectedNum = 1;
 
+    public int CurrentSpawned;
+
     public void Spawn()
     {
         if (InfectedMaxCount >= CurrentInfectedNum)
@@ -26,26 +28,30 @@ public class Spawner : MonoBehaviour {
             rotationInDegrees.z += adjustmentAngle;
 
             Quaternion rotationInRadians = Quaternion.Euler(rotationInDegrees);
-            Instantiate(prefabToSpawn, transform.position, rotationInRadians);
+            GameObject obj = Instantiate(prefabToSpawn, transform.position, rotationInRadians);
+
+            obj.transform.parent = transform;
+            
+
 
             SendCurrentEnemyNum(CurrentInfectedNum);
-            print(CurrentInfectedNum + " has spawned");
+            //print(CurrentInfectedNum + " has spawned");
             CurrentInfectedNum++;
-            
+            Counter();
         }
-       
     }
 
     public void Dead()
     {
-        CurrentInfectedNum--;
-        
-        print(CurrentInfectedNum + " has died");
+        //CurrentInfectedNum--;
+        Counter();
     }
 
     public void Update()
     {
         updatenum = CurrentInfectedNum;
+
+        
     }
 
     public void SendCurrentEnemyNum(int num)
@@ -55,4 +61,11 @@ public class Spawner : MonoBehaviour {
             OnSendEnemyNum(CurrentInfectedNum);
         }
     }
+
+    public void Counter()
+    {
+        CurrentSpawned = transform.childCount;
+        print(CurrentSpawned);
+    }
+
 } // Spawner
