@@ -18,6 +18,10 @@ public class pauseMenu : MonoBehaviour {
 
     public void Toggle()
     {
+
+        //if (EventSystem.current.IsPointerOverGameObject())
+        //    return;
+
         ui.SetActive(!ui.activeSelf);
 
         if (ui.activeSelf)

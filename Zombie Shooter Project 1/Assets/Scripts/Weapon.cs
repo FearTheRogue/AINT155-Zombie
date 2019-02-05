@@ -74,7 +74,7 @@ public class Weapon : MonoBehaviour {
 
     private void Fire()
     {
-        
+
         //if (EventSystem.current.IsPointerOverGameObject())
         //    return;
 

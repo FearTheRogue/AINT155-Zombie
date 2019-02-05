@@ -35,7 +35,7 @@ public class GameUI : MonoBehaviour {
     public bool Reloading = false;
 
 
-    public float pickuDisplayTimer = 2;
+    public float pickuDisplayTimer = 15;
     public Sprite[] pickupImages;
 
     public Image pickupImage;
@@ -110,7 +110,6 @@ public class GameUI : MonoBehaviour {
     private void UpdateSpawnDestroy(int spawn)
     {
         spawnCount += spawn;
-        Debug.Log(spawnCount);
         // maxSpawners = maxSpawn;
 
         enemyController enemies = new enemyController();
@@ -193,10 +192,13 @@ public class GameUI : MonoBehaviour {
                 pickupImage.sprite = pickupImages[0];
                 break;
             case PickupType.Invincible:
+                pickupImage.sprite = pickupImages[1];
                 break;
             case PickupType.AttackSpeed:
+                pickupImage.sprite = pickupImages[2];
                 break;
             case PickupType.MoveSpeed:
+                pickupImage.sprite = pickupImages[3];
                 break;
             default:
                 break;
@@ -209,7 +211,6 @@ public class GameUI : MonoBehaviour {
     void TurnOffPickupDisplay()
     {
         pickupImage.enabled = false;
-        
     }
 
 } // GameUI

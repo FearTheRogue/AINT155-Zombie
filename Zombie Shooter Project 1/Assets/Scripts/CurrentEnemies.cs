@@ -10,24 +10,46 @@ public class CurrentEnemies : MonoBehaviour {
         // creates an int for how many enemies there are spawned in the level
     public int Enemies;
 
+    public int EnemiesActive;
+    public Transform[] Spawners;
+
+    public Text CurrentEnemiesText;
+
     private void OnEnable()
     {
-        print(transform.childCount);
+        //print(transform.childCount);
         // gets the OnSendEnemyNum for Spawner script and adds an enemy into the currentNum
-        Spawner.OnSendEnemyNum += UpdateEnemyNum;
+        //Spawner.OnSendEnemyNum += UpdateEnemyNum;
         //HealthSystem.OnSendEnemyNum += UpdateEnemy;
     }
 
     public void OnDisable()
     {
-        Spawner.OnSendEnemyNum -= UpdateEnemyNum;
+        //Spawner.OnSendEnemyNum -= UpdateEnemyNum;
         //HealthSystem.OnSendEnemyNum -= UpdateEnemy;
     }
 
     private void UpdateEnemyNum(int currentNum)
     {
         // Makes the currentNum = to the Enemies
-        Enemies = currentNum;
+        //Enemies = currentNum;
 
     }
+
+    void Start()
+    {
+        
+    }
+
+
+    void Update()
+    {
+        foreach (Transform enemy in Spawners)
+        {
+            print(enemy.childCount);
+            EnemiesActive = enemy.childCount;
+            CurrentEnemiesText.text = EnemiesActive.ToString();
+        }
+    }
+
 } // CurrentEnemies

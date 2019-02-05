@@ -19,10 +19,11 @@ public class Spawner : MonoBehaviour {
     public int CurrentInfectedNum = 1;
 
     public int CurrentSpawned;
+    //public Text CurrentSpawnedText;
 
     public void Spawn()
     {
-        if (InfectedMaxCount >= CurrentInfectedNum)
+        if (InfectedMaxCount >= CurrentInfectedNum + 1)
         {
             Vector3 rotationInDegrees = transform.eulerAngles;
             rotationInDegrees.z += adjustmentAngle;
@@ -32,26 +33,38 @@ public class Spawner : MonoBehaviour {
 
             obj.transform.parent = transform;
             
-
-
             SendCurrentEnemyNum(CurrentInfectedNum);
-            //print(CurrentInfectedNum + " has spawned");
+
             CurrentInfectedNum++;
-            Counter();
+            
         }
+        //Counter();
     }
 
     public void Dead()
     {
         //CurrentInfectedNum--;
-        Counter();
+        //Counter();
     }
 
     public void Update()
     {
+        //updatenum = CurrentInfectedNum;
+
+        //CurrentSpawned = transform.childCount;
+
+        //if (CurrentSpawnedText != null)
+        //    CurrentSpawnedText.text = "Infected Left: " + CurrentSpawned;
+    }
+
+    public void FixedUpdate()
+    {
         updatenum = CurrentInfectedNum;
 
-        
+        CurrentSpawned = transform.childCount;
+
+        //if (CurrentSpawnedText != null)
+          //  CurrentSpawnedText.text = "Infected Left: " + CurrentSpawned;
     }
 
     public void SendCurrentEnemyNum(int num)
@@ -65,7 +78,11 @@ public class Spawner : MonoBehaviour {
     public void Counter()
     {
         CurrentSpawned = transform.childCount;
-        print(CurrentSpawned);
+
+        //if(CurrentSpawnedText != null)
+        //CurrentSpawnedText.text = "Infected Left: " + CurrentSpawned;
+        //print(CurrentSpawned);
     }
+
 
 } // Spawner

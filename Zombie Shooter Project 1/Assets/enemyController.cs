@@ -20,13 +20,13 @@ public class enemyController : MonoBehaviour {
 	void Update () {
 
         // get rid of this
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        enemiesLeft = enemies.Length;
+        //GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        //enemiesLeft = enemies.Length;
 
-        GameObject[] bossEnemies = GameObject.FindGameObjectsWithTag("BossEnemy");
-        bossEnemiesLeft = bossEnemies.Length;
+        //GameObject[] bossEnemies = GameObject.FindGameObjectsWithTag("BossEnemy");
+        //bossEnemiesLeft = bossEnemies.Length;
 
-        SpawnedEnemies.text = "Infected Left: " + enemiesLeft;
-        SpawnedBoss.text = "Tough Infected Left: " + bossEnemiesLeft;
+        //SpawnedEnemies.text = "Infected Left: " + enemiesLeft;
+        //SpawnedBoss.text = "Tough Infected Left: " + bossEnemiesLeft;
 	}
 }
