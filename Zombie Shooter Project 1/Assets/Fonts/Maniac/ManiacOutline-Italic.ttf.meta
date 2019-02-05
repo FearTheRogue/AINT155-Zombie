@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: c76d79e3daba7b54faa5d044f7cb607e
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Maniac Outline
+  fontNames:
+  - Maniac Outline
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 6ae786cf041d4004d8751be0f38cc8ea, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

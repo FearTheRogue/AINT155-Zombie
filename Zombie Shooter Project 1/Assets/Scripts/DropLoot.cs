@@ -26,7 +26,6 @@ public class DropLoot : MonoBehaviour {
         // if the calc_dropChance is bigger than the dropchance (set in the inspector) nothing will spawn
         if (calc_DropChance > dropChance) 
         {
-            Debug.Log(calc_DropChance);
             return;
         }
 
@@ -41,7 +40,6 @@ public class DropLoot : MonoBehaviour {
                 // adds the dropRarity, that is set in the inspector, and adds it up 
                 itemRarity += loot[i].dropRarity;
             }
-            Debug.Log("ItemRarity = " + itemRarity);
             // creates a random value between 0 and the itemRarity(that was added up)
             int randomValue = Random.Range(0, itemRarity);
 
@@ -56,7 +54,6 @@ public class DropLoot : MonoBehaviour {
                     return;
                 }
                 randomValue -= loot[j].dropRarity;
-                Debug.Log("Random Value Decreased = " + randomValue);
             }
         }
     }

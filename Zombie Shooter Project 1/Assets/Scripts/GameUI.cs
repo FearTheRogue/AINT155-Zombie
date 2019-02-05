@@ -6,20 +6,30 @@ using UnityEngine.SceneManagement;
 
 public class GameUI : MonoBehaviour {
 
-    [SerializeField]
-    private GameObject pausePanel;
-
     public Slider healthBar;
-    public Text scoreText, healthText, deathText, ammoText, ReloadingText, healthRemainingText, spawnersDestroyedText;
+
+    [Header("Text Attributes")]
+    public Text scoreText;
+    public Text healthText;
+    public Text deathText;
+    public Text ammoText;
+    public Text ReloadingText;
+    public Text healthRemainingText;
+    public Text spawnersDestroyedText;
+
+    [Header("Animation Attributes")]
     public Animator scoreAnim;
+    public Animator LevelTextAnim;
 
     public GameManager gameManager;
 
     //public Sprite fireRate, Damage, Invinciblity, Stamina;
 
-    public AudioSource bg_sound;
-
-    public int playerScore = 0, ammoCount = 0, spawnCount = 0, maxSpawners = 0;
+    [Header("Int Attributes")]
+    public int playerScore = 0;
+    public int ammoCount = 0;
+    public int spawnCount = 0;
+    public int maxSpawners = 0;
     public int killCounter = 0;
 
     public bool Reloading = false;
@@ -37,8 +47,9 @@ public class GameUI : MonoBehaviour {
         // sets the time scale to 1
         Time.timeScale = 1f;
         // plays the background music 
-       bg_sound.Play(); 
-        
+
+        if(LevelTextAnim != null)
+        LevelTextAnim.SetTrigger("LevelTextTrigger");
     }
 
     private void OnEnable()
@@ -124,7 +135,6 @@ public class GameUI : MonoBehaviour {
         {
             ReloadingText.enabled = false;
         }
-        //Debug.Log(ReloadingText.text);
     }
 
 
@@ -147,20 +157,6 @@ public class GameUI : MonoBehaviour {
         scoreAnim.SetTrigger("ScoreTrigger");
         // counts the kills by one when the method is called
         deathText.text = "x " + killCounter++.ToString();
-    }
-
-    public void PauseGame()
-    {
-        // sets the timescale to 0, to stop the game and sets the pause panel active
-        Time.timeScale =  0f;
-        pausePanel.SetActive(true);
-    }
-
-    public void ResumeGame()
-    {
-        // sets the timescale back to 1 and deactives the pause panel
-        Time.timeScale = 1f;
-        pausePanel.SetActive(false);
     }
 
     public void QuitGame()
