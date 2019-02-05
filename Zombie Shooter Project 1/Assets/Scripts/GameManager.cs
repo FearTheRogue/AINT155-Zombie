@@ -13,14 +13,6 @@ public class GameManager : MonoBehaviour {
 
     public SceneFader_01 sceneFader;
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            EndGame();
-        }
-    }
-
     public void LevelMenu()
     {
         //SceneFader.instance.LoadLevel("Level Menu");

@@ -6,13 +6,14 @@ using UnityEngine.UI;
 public class enemyController : MonoBehaviour {
 
     public Text SpawnedEnemies;
-    int enemiesLeft = 0;
+    public Text SpawnedBoss;
+    public int enemiesLeft = 0;
+    public int bossEnemiesLeft = 0;
 
     // Use this for initialization
     void Start () {
         enemiesLeft = 10;
-        
-
+        bossEnemiesLeft = 10;
     }
 	
 	// Update is called once per frame
@@ -20,7 +21,10 @@ public class enemyController : MonoBehaviour {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         enemiesLeft = enemies.Length;
 
+        GameObject[] bossEnemies = GameObject.FindGameObjectsWithTag("BossEnemy");
+        bossEnemiesLeft = bossEnemies.Length;
+
         SpawnedEnemies.text = "Infected Left: " + enemiesLeft;
-        	
+        SpawnedBoss.text = "Tough Infected Left: " + bossEnemiesLeft;
 	}
 }

@@ -31,7 +31,7 @@ public class GameUI : MonoBehaviour {
     public int spawnCount = 0;
     public int maxSpawners = 0;
     public int killCounter = 0;
-
+    
     public bool Reloading = false;
 
     // updates the spawns destroyed text 
@@ -102,14 +102,23 @@ public class GameUI : MonoBehaviour {
     {
         spawnCount += spawn;
         Debug.Log(spawnCount);
-       // maxSpawners = maxSpawn;
+        // maxSpawners = maxSpawn;
 
+        enemyController enemies = new enemyController();
+        int spawnedInfected = enemies.enemiesLeft;
+        enemyController bossEnemies = new enemyController();
+        int spawnedBossInfected = bossEnemies.bossEnemiesLeft;
 
-        if(spawnCount == maxSpawners)
+        if(spawnedInfected == 0 && spawnCount == maxSpawners && spawnedBossInfected == 0)
         {
             gameManager.WinGame();
-            //Invoke("winGame", 2);
         }
+
+        //if(spawnCount == maxSpawners)
+        //{
+        //    gameManager.WinGame();
+        //    //Invoke("winGame", 2);
+        //}
     }
 
     // goes to win scene
