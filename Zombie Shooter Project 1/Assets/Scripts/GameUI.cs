@@ -57,6 +57,7 @@ public class GameUI : MonoBehaviour {
         if(LevelTextAnim != null)
         LevelTextAnim.SetTrigger("LevelTextTrigger");
 
+        if(pickupImage != null)
         pickupImage.enabled = false;
     }
 

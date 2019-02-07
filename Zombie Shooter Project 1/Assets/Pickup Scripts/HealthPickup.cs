@@ -29,6 +29,8 @@ public class HealthPickup : MonoBehaviour
      * see link: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/readonly
      */
     private readonly int health = 10;
+    public int maxHealth = 50;
+    public int CurrentHealth;
 
     /*
      * OnTriggerEnter2D
@@ -37,6 +39,7 @@ public class HealthPickup : MonoBehaviour
      * here is where the health is added to the player health system
      * this GameObject will destroy itself when the health is added
      */
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         /*
@@ -48,7 +51,15 @@ public class HealthPickup : MonoBehaviour
          * NOTE: we add health using minus health (?!??!) 
          *       this is because the TakeDamage method will remove the health, so we give it minus health to add instead!
          */
-        other.transform.SendMessage("TakeDamage", -health, SendMessageOptions.DontRequireReceiver);
+        if (health >= maxHealth)
+        {
+            print("YOu have too much Health");
+            Destroy(this);
+        }
+        else
+        {
+            other.transform.SendMessage("TakeDamage", -health, SendMessageOptions.DontRequireReceiver);
+        }
 
         /*
          * DESTROY THE PICKUP GAMEOBJECT

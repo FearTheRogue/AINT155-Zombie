@@ -10,6 +10,7 @@ public class OnDamagedEvent : UnityEvent<int> { }
 public class HealthSystem : MonoBehaviour {
 
     public int health = 10;
+    public int maxHealth = 50;
     public UnityEvent onDie;
     public OnDamagedEvent OnDamaged;
     //public int currentHealth;
@@ -21,16 +22,8 @@ public class HealthSystem : MonoBehaviour {
 
     public void TakeDamage(int damage)
     {
-        
-    //    print(currentHealth);
-
-    //if(currentHealth >= health)
-    //    {
-    //        health = 50;
-    //    }
 
         health -= damage;
-
 
         OnDamaged.Invoke(health);
 

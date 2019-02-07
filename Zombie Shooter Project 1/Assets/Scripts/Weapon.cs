@@ -33,6 +33,7 @@ public class Weapon : MonoBehaviour {
 
     private bool isFiring = false;
     private bool isReloading = false;
+    public bool isPausedUI = false;
 
     public void Start()
     {
@@ -44,9 +45,20 @@ public class Weapon : MonoBehaviour {
         //MiniGunAnim.SetBool("isFiring", false);
     }
 
-    void OnEnable()
+    private void OnEnable()
     {
         isReloading = false;
+        pauseMenu.OnSendPauseBool += UpdatePauseBool;
+    }
+
+    private void OnDisable()
+    {
+        pauseMenu.OnSendPauseBool -= UpdatePauseBool;
+    }
+
+    private void UpdatePauseBool(bool isPaused)
+    {
+        isPausedUI = isPaused;
     }
 
     public void OnAmmoCount()
@@ -74,9 +86,13 @@ public class Weapon : MonoBehaviour {
 
     private void Fire()
     {
-
-        //if (EventSystem.current.IsPointerOverGameObject())
-        //    return;
+        if (isPausedUI)
+        {
+            if (EventSystem.current.IsPointerOverGameObject())
+                return;
+        }
+        else
+        {
 
         isFiring = true;
         // current ammo is taken away 
@@ -96,8 +112,8 @@ public class Weapon : MonoBehaviour {
             // destroys the muzzel flash after the given time
             Destroy(MuzzleFlash.gameObject, 0.04f);
         }
-        // sends a message to shake the camera 
-        GameObject.FindGameObjectWithTag("MainCamera").SendMessage("DoShake");
+            // sends a message to shake the camera 
+            GameObject.FindGameObjectWithTag("MainCamera").SendMessage("DoShake");
 
         if (GetComponent<AudioSource>() != null)
         {
@@ -106,10 +122,12 @@ public class Weapon : MonoBehaviour {
             GetComponent<AudioSource>().Play();
         }
         Invoke("SetFiring", fireTime);
+        }
     }
 
-	// Update is called once per frame
-	public void Update () {
+    // Update is called once per frame
+    public void Update () {
+        print(isPausedUI + " From Weapon Script");
 
         OnReloading(isReloading);
         // if the player presses R it force reloades 
@@ -170,9 +188,6 @@ public class Weapon : MonoBehaviour {
             GetComponent<AudioSource>().Play();
             //Debug.Log("Reloading Sound from IEnumarator");
         }
-
-
-        //Debug.Log("Reloading..");
 
         yield return new WaitForSeconds(reloadTime);
          

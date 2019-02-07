@@ -19,8 +19,16 @@ public class Spawner : MonoBehaviour {
     public int CurrentInfectedNum = 1;
 
     public int CurrentSpawned;
+
+    public Transform t;
     //public Text CurrentSpawnedText;
 
+    public void Start()
+    {
+
+        t = transform.GetComponent<Transform>();
+        
+    }
     public void Spawn()
     {
         if (InfectedMaxCount >= CurrentInfectedNum + 1)
