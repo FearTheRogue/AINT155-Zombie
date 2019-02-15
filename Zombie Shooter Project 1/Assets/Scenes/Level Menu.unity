@@ -5927,6 +5927,8 @@ MonoBehaviour:
   - {fileID: 149452558}
   - {fileID: 2111536014}
   - {fileID: 2034895114}
+  lockedLevel: {fileID: 21300000, guid: 37482095664929e40ac1a3135b26f329, type: 3}
+  LevelNum: {fileID: 0}
 --- !u!4 &689090807
 Transform:
   m_ObjectHideFlags: 0
@@ -16084,6 +16086,21 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114446982248558182, guid: a77960a2ba8f7a549a8e620de46cb59f,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114446982248558182, guid: a77960a2ba8f7a549a8e620de46cb59f,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114446982248558182, guid: a77960a2ba8f7a549a8e620de46cb59f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a77960a2ba8f7a549a8e620de46cb59f, type: 2}

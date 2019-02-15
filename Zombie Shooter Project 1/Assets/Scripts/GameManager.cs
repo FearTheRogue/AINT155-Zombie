@@ -57,16 +57,22 @@ public class GameManager : MonoBehaviour {
     //returns to main menu
     public void BackToMainMenu()
     {
-        //SceneManager.LoadScene("Main Menu");
-        //SceneFader.instance.LoadLevel("Main Menu");
         sceneFader.FadeTo("Main Menu");
+    }
+
+    public void ControlsMenu()
+    {
+        sceneFader.FadeTo("Controls Menu");
+    }
+
+    public void OptionsMenu()
+    {
+        sceneFader.FadeTo("Options Menu");
     }
 
     // restarts the level
     public void RestartGame()
     {
-        //SceneManager.LoadScene("Zombie Shooter Level 1");
-        //SceneFader.instance.LoadLevel("Level01");
         sceneFader.FadeTo(SceneManager.GetActiveScene().name);
     }
 
@@ -77,12 +83,6 @@ public class GameManager : MonoBehaviour {
         //SceneFader.instance.LoadLevel("Tutorial Level");
     }
     
-    //// not used
-    //public void tutorialComp()
-    //{
-    //    //SceneManager.LoadScene("Zombie Shoot Level 1");
-    //    SceneFader.instance.LoadLevel("Zombie Shoot Level 1");
-    //}
 
     // closes the application
     public void ExitGame()
