@@ -127,7 +127,7 @@ public class Weapon : MonoBehaviour {
 
     // Update is called once per frame
     public void Update () {
-        print(isPausedUI + " From Weapon Script");
+        //print(isPausedUI + " From Weapon Script");
 
         OnReloading(isReloading);
         // if the player presses R it force reloades 

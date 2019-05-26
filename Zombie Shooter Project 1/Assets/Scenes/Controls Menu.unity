@@ -14807,8 +14807,8 @@ RectTransform:
   m_Children:
   - {fileID: 379530142}
   - {fileID: 1154859659}
-  - {fileID: 1889677161}
   - {fileID: 1143956278}
+  - {fileID: 1889677161}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14908,7 +14908,7 @@ RectTransform:
   m_Children:
   - {fileID: 50248886}
   m_Father: {fileID: 1024271183}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -29085,7 +29085,7 @@ Prefab:
     - target: {fileID: 224575064894490078, guid: b733c267b2adba34d96824400f6dd1fe,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -93.4
+      value: -93.399994
       objectReference: {fileID: 0}
     - target: {fileID: 224575064894490078, guid: b733c267b2adba34d96824400f6dd1fe,
         type: 2}
@@ -29170,6 +29170,16 @@ Prefab:
         type: 2}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114564520692577130, guid: b733c267b2adba34d96824400f6dd1fe,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 377928603}
+    - target: {fileID: 114564520692577130, guid: b733c267b2adba34d96824400f6dd1fe,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackToMainMenu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b733c267b2adba34d96824400f6dd1fe, type: 2}

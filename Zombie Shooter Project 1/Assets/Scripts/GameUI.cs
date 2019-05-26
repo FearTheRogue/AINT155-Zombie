@@ -54,11 +54,16 @@ public class GameUI : MonoBehaviour {
         Time.timeScale = 1f;
         // plays the background music 
 
-        if(LevelTextAnim != null)
-        LevelTextAnim.SetTrigger("LevelTextTrigger");
+        Invoke("PlayLevelAnim", 1);
 
-        if(pickupImage != null)
+        if (pickupImage != null)
         pickupImage.enabled = false;
+    }
+
+    private void PlayLevelAnim()
+    {
+        if (LevelTextAnim != null)
+            LevelTextAnim.SetTrigger("LevelTextTrigger");
     }
 
     private void OnEnable()

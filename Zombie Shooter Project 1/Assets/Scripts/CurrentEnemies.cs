@@ -5,26 +5,30 @@ using UnityEngine.UI;
 
 public class CurrentEnemies : MonoBehaviour {
 
-    public int EnemiesActive;
-    public Transform[] Spawners;
+    //public Transform[] EnemiesActive;
+    //public int[] Spawners;
 
-    Spawner spawnerScript;
+    //Spawner spawnerScript;
 
-    public Text CurrentEnemiesText;
-
-
-    void Start()
-    {
-        Spawners = spawnerScript.GetComponentsInChildren<Transform>();
-    }
+    //public Text CurrentEnemiesText;
 
 
-    void Update()
-    {
-        foreach (Transform enemy in Spawners)
-        {
-            CurrentEnemiesText.text = enemy.ToString();
-        }
-    }
+    //void Start()
+    //{
+    //    Spawners = spawnerScript.GetComponent<Transform>();
+    //}
 
+
+    //void Update()
+    //{
+    //    for (int i = 0; i < Spawners; i++)
+    //    {
+    //        foreach (Transform e in EnemiesActive)
+    //        {
+    //            //EnemiesActive = e.childCount;
+    //            CurrentEnemiesText.text = EnemiesActive.ToString();
+    //            print("There are " + i + " Spawners");
+    //        }
+    //    }
+    //}
 } // CurrentEnemies
