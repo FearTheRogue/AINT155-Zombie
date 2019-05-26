@@ -18,17 +18,17 @@ public class LevelSelector : MonoBehaviour {
 
         int levelReached = PlayerPrefs.GetInt("levelReached", 1); // 1 = tutorial level
 
+        lockedLevel = GetComponent<Sprite>();
+
         for (int i = 0; i < levelButtons.Length; i++)
         {
             if (i + 1 > levelReached)
                 levelButtons[i].interactable = false;
-                //LevelNum = lockedLevel;
         }
     }
 
-    public void Select (string levelName)
+    public void Select(string levelName)
     {
         fader.FadeTo(levelName);
     }
-
 }

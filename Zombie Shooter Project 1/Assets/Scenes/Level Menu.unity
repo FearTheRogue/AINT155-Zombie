@@ -15827,11 +15827,11 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 114446982248558182, guid: a77960a2ba8f7a549a8e620de46cb59f,
         type: 2}
       propertyPath: m_Type
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114446982248558182, guid: a77960a2ba8f7a549a8e620de46cb59f,
         type: 2}
