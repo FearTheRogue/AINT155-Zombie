@@ -10,6 +10,8 @@ public class Weapon1 : MonoBehaviour {
 
     public Transform BulletTrailPrefab;
 
+    public float effectSpawnRate = 10;
+    float timeToSpawnEffect = 0;
     float timeToFire = 0;
     Transform firePoint;
 
@@ -48,31 +50,38 @@ public class Weapon1 : MonoBehaviour {
 
         RaycastHit2D hit = Physics2D.Raycast(firePointPosition, mousePosition - firePointPosition, 100, whatToHit);
 
-        Effect();
-
+        if (Time.time >= timeToSpawnEffect) {
+            Effect();
+            timeToSpawnEffect = Time.time + 1 / effectSpawnRate;
+        }
+        
         Debug.DrawLine(firePointPosition, (mousePosition - firePointPosition) * 100, Color.cyan);
 
         if(hit.collider != null)
         {
             Debug.DrawLine(firePointPosition, hit.point, Color.red);
-            Debug.Log("We hit " + hit.collider.name + " and did " + damage + " damage!");
+            //Debug.Log("We hit " + hit.collider.name + " and did " + damage + " damage!");
+            Enemy enemy = hit.collider.GetComponent<Enemy>();
+
+            if(enemy != null)
+            {
+                enemy.transform.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
+
+                Debug.Log("This is being called..");
+                Debug.Log(enemy);
+            }
+
+            //moveTrail movetrail = hit.collider.GetComponent<moveTrail>();
+            //if(movetrail != null)
+            //{
+            //    Die();
+            //}
         }
     }
 
     void Effect()
     {
         Instantiate(BulletTrailPrefab, firePoint.position, firePoint.rotation);
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        // Sends a message to healthSystem script, to say how much damage to be taken off, it collided
-        other.transform.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
-
-        Debug.Log("Bang");
-
-        // then destroys itself
-        Die();
     }
 
     private void Die()

@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour {
         GameObject player = GameObject.FindWithTag("Player");
         onSpawn.Invoke(player.transform);
 
-        InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        //InvokeRepeating("UpdateTarget", 0f, 0.5f);
 
 
         // checks to see if it has a audio source 
