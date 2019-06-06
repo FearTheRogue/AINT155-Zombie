@@ -13,6 +13,9 @@ public class Enemy : MonoBehaviour {
 
     public EnemySpawnedEvent onSpawn;
 
+    public Transform target;
+    public float range = 15f;
+
     // Creates audio clip of the infected spawning
     public AudioSource audioSource;
     public AudioClip InfectedSpawn;
@@ -21,6 +24,8 @@ public class Enemy : MonoBehaviour {
     private void Start() {
         GameObject player = GameObject.FindWithTag("Player");
         onSpawn.Invoke(player.transform);
+
+        InvokeRepeating("UpdateTarget", 0f, 0.5f);
 
 
         // checks to see if it has a audio source 
@@ -31,6 +36,21 @@ public class Enemy : MonoBehaviour {
             GetComponent<AudioSource>().Play();
         }
 	}
+
+    //void UpdateTarget()
+    //{
+    //    GameObject player = GameObject.FindWithTag("Player");
+    //    onSpawn.Invoke(player.transform);
+
+    //    float distanceToPlayer = Vector3.Distance(transform.position, player.transform, transform.rotation);
+
+    //}
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, range);
+    }
 
     public void SendZHealthData(int health)
     {
