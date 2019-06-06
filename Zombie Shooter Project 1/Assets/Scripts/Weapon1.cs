@@ -24,7 +24,6 @@ public class Weapon1 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
 		if(fireRate == 0)
         {
             if(Input.GetButtonDown("Fire1"))
@@ -69,6 +68,9 @@ public class Weapon1 : MonoBehaviour {
     {
         // Sends a message to healthSystem script, to say how much damage to be taken off, it collided
         other.transform.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
+
+        Debug.Log("Bang");
+
         // then destroys itself
         Die();
     }
