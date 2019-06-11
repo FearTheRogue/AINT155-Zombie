@@ -67,7 +67,7 @@ public class Weapon1 : MonoBehaviour {
             {
                 enemy.transform.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
 
-                Debug.Log("This is being called..");
+                Debug.Log("This is being called from Weapon1 Script");
                 Debug.Log(enemy);
             }
 

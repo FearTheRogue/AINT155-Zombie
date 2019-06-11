@@ -17,11 +17,9 @@ public class moveTrail : MonoBehaviour {
         // Sends a message to healthSystem script, to say how much damage to be taken off, it collided
         other.transform.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
 
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
 
-        Debug.Log("This is being called..");
-
-
+        Debug.Log(other + "This is being called..");
 
         // then destroys itself
         Die();
@@ -31,10 +29,10 @@ public class moveTrail : MonoBehaviour {
     {
         // if the bullet goes outside of the bounds of the screen, it will destroy itself
         Die();
-        Debug.Log("Bullet Went off the screen!");
     }
     private void Die()
     {
-        Destroy(gameObject);
+        Debug.Log("Died");
+        Destroy(this.gameObject);
     }
 }
