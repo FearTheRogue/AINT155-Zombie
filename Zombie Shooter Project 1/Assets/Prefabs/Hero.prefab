@@ -75,7 +75,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4844328639619652}
   m_Layer: 0
-  m_Name: Bullet Spawn
+  m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,7 +106,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4611870317203946}
-  - component: {fileID: 114053043505980420}
   m_Layer: 13
   m_Name: Weapon Manager
   m_TagString: Untagged
@@ -122,8 +121,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4822664896171302}
-  - component: {fileID: 114088700260087884}
   - component: {fileID: 82244622746943454}
+  - component: {fileID: 114092099000193480}
   m_Layer: 0
   m_Name: Pistol Weapon
   m_TagString: Untagged
@@ -194,13 +193,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1390650357428656}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.004, y: 0.084, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0.007, y: 0.005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4822664896171302}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!4 &4847945332015318
 Transform:
   m_ObjectHideFlags: 1
@@ -556,20 +555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd2aad523a82be64b8fe27bd2b9b6d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114053043505980420
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1598576492903362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 064b6abfbab9358439a4eb5e44cd3d58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 212039384184481516}
-  GunImage: {fileID: 0}
---- !u!114 &114088700260087884
+--- !u!114 &114092099000193480
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -577,24 +563,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1996194021731566}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22bbc6de99799644f8045426ed8894c9, type: 3}
+  m_Script: {fileID: 11500000, guid: c5ea01b2d0aab5c46adf3c961beacd06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1142470383813792, guid: 65076417fb7436448a5a9c894331ac09,
+  fireRate: 0
+  damage: 1
+  whatToHit:
+    serializedVersion: 2
+    m_Bits: 4294959099
+  BulletTrailPrefab: {fileID: 4013301800990668, guid: f389e786943c0084881a6ea3b665438a,
     type: 2}
-  bulletSpawn:
-  - {fileID: 4844328639619652}
-  fireTime: 0.5
-  MuzzleFlashPrefab: {fileID: 4962192564134492, guid: a6efaf2fc639f894e81fa91df8240ba8,
-    type: 2}
-  sprite: {fileID: 21300010, guid: 24b8eafa64a0136469639f6940cf4d4d, type: 3}
-  gunImage: {fileID: 21300000, guid: adf5c713f1347064493eef217792d4ad, type: 3}
-  maxAmmo: 12
-  currentAmmo: 5
-  reloadTime: 2
-  fireSound: {fileID: 8300000, guid: 4cd811089494b9347bb538b2f1084db2, type: 3}
-  reloadSound: {fileID: 8300000, guid: e277f2a10584fde4eaf3166813272069, type: 3}
-  isPausedUI: 0
+  effectSpawnRate: 10
 --- !u!114 &114729519161497560
 MonoBehaviour:
   m_ObjectHideFlags: 1

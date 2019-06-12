@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27c26b7988a97ad418c7320381f0b9e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 200
   damage: 10
 --- !u!120 &120505249510215716
 LineRenderer:

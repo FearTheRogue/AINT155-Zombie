@@ -26,6 +26,8 @@ public class Weapon1 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        Shoot();
 		if(fireRate == 0)
         {
             if(Input.GetButtonDown("Fire1"))
